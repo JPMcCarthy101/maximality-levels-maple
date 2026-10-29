@@ -1,0 +1,7 @@
+cff-version: 1.2.0
+message: "Please cite the corresponding paper and the version of this code used."
+title: "Maximality Levels: accompanying Maple computations"
+type: software
+authors:
+  - family-names: McCarthy
+    given-names: "J. P."

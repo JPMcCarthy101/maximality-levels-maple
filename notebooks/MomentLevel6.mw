@@ -1,0 +1,826 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Worksheet>
+  <Version major="2025" minor="2"/>
+  <Label-Scheme value="2" prefix=""/>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Title" layout="Normal" xml:space="preserve">Moment level six: paper equations (15)-(34)</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Text" layout="Normal" xml:space="preserve">Self-contained symbolic source; run all Maple input groups in order. Full determinant may take significant time. Maple execution has not yet been performed.</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Maple Input" layout="Normal" xml:space="preserve"># Moment level six, self-contained exact symbolic verification.
+# Derived from original author notebooks and the 2026 AI-assisted sources.
+# This file has NOT been executed in Maple in the present environment.
+# Run from a clean session; preserve any failure messages and Maple version.
+restart:
+printf("Moment six; Maple version: %a\n",kernelopts(version)):
+RUN_UNIFORM_RANK_CHECK := true:  # Required for the complete run; expensive
+RUN_N4_CHECK := true:           # Optional retained N=4 observation
+SHOW_ALL_SQUARING_ROWS := false: # Set true to display all 71 beta polynomials
+
+</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Heading1" layout="Normal" xml:space="preserve">1. Elementary checks and partition operations.</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Maple Input" layout="Normal" xml:space="preserve"># 1. Elementary checks and partition operations.
+CheckZero := proc(expr, label::string)
+    if normal(expand(expr)) &lt;&gt; 0 then error "FAILED: %1", label end if;
+    NULL
+end proc:
+CheckMatrix := proc(A, label::string)
+    local ii,jj;
+    for ii to LinearAlgebra:-RowDimension(A) do
+        for jj to LinearAlgebra:-ColumnDimension(A) do
+            CheckZero(A[ii,jj],cat(label," [",ii,",",jj,"]"));
+        end do;
+    end do;
+    printf("PASS: %s\n",label);
+    NULL
+end proc:
+Canon := proc(w::list)
+    local seen,nextid,xx,out;
+    seen := table(); nextid := 0; out := [];
+    for xx in w do
+        if not assigned(seen[xx]) then
+            seen[xx] := nextid; nextid := nextid+1;
+        end if;
+        out := [op(out),seen[xx]];
+    end do;
+    out
+end proc:
+Words := proc(nn::nonnegint)
+    local ws,newws,stage,w,mm,jj;
+    ws := [[]];
+    for stage to nn do
+        newws := [];
+        for w in ws do
+            if nops(w)=0 then mm := -1 else mm := max(op(w)) end if;
+            for jj from 0 to mm+1 do newws := [op(newws),[op(w),jj]] end do;
+        end do;
+        ws := newws;
+    end do;
+    ws
+end proc:
+Crossing := proc(w::list)
+    local aa,bb,cc,dd,nn;
+    nn := nops(w);
+    for aa to nn-3 do for bb from aa+1 to nn-2 do
+        for cc from bb+1 to nn-1 do for dd from cc+1 to nn do
+            if w[aa]=w[cc] and w[bb]=w[dd] and w[aa]&lt;&gt;w[bb] then
+                return true;
+            end if;
+        end do; end do;
+    end do; end do;
+    false
+end proc:
+Root := proc(parent,xx::posint)
+    local rr; rr := xx;
+    while parent[rr]&lt;&gt;rr do rr := parent[rr] end do;
+    rr
+end proc:
+Join := proc(parent,xx::posint,yy::posint)
+    parent[Root(parent,xx)] := Root(parent,yy);
+    NULL
+end proc:
+Lower := proc(w::list,groups::list,caps::list)
+    local parent,nn,g,jj,out,roots;
+    nn := max(op(w))+1;
+    parent := Array(1..nn,[seq(jj,jj=1..nn)]);
+    for g in [op(groups),op(caps)] do
+        for jj from 2 to nops(g) do
+            Join(parent,w[g[1]]+1,w[g[jj]]+1);
+        end do;
+    end do;
+    out := [seq(Root(parent,w[g[1]]+1),g in groups)];
+    roots := {seq(Root(parent,jj),jj=1..nn)};
+    [Canon(out),nops(roots minus {op(out)})]
+end proc:
+
+</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Heading1" layout="Normal" xml:space="preserve">2. Construct the 66 operations of Proposition 7.4.</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Maple Input" layout="Normal" xml:space="preserve"># 2. Construct the 66 operations of Proposition 7.4.
+# Each map is [output groups, capped pairs, family label]. Inputs are 1..6.
+BuildMaps := proc()
+    local maps,aa,bb,cc,dd,xx,yy,jj,cyc,groups,edges,used;
+    maps := [];
+    # 15 restrictions to four positions.
+    for aa to 3 do for bb from aa+1 to 4 do
+        for cc from bb+1 to 5 do for dd from cc+1 to 6 do
+            maps := [op(maps),[[[aa],[bb],[cc],[dd]],[],"restriction"]];
+        end do; end do;
+    end do; end do;
+    # 30 singleton deletions followed by an adjacent merging.
+    for xx to 6 do for yy to 6 do
+        if xx=yy then next end if;
+        cyc := [seq(1+((yy+jj-1) mod 6),jj=0..5)];
+        cyc := select(jj -&gt; jj&lt;&gt;xx,cyc);
+        groups := [[cyc[1],cyc[2]],seq([cyc[jj]],jj=3..5)];
+        maps := [op(maps),[groups,[],"delete-merge"]];
+    end do; end do;
+    # Six caps, each deleting both adjacent legs.
+    for xx to 6 do
+        cyc := [seq(1+((xx+jj-1) mod 6),jj=0..5)];
+        groups := [seq([cyc[jj]],jj=3..6)];
+        maps := [op(maps),[groups,[[cyc[1],cyc[2]]],"cap"]];
+    end do;
+    # Nine disjoint pairs of cyclic adjacent mergings.
+    edges := [{1,2},{2,3},{3,4},{4,5},{5,6},{6,1}];
+    for aa to 5 do for bb from aa+1 to 6 do
+        if nops(edges[aa] intersect edges[bb])&lt;&gt;0 then next end if;
+        used := edges[aa] union edges[bb];
+        groups := [sort([op(edges[aa])]),sort([op(edges[bb])])];
+        for jj to 6 do
+            if not member(jj,used) then groups := [op(groups),[jj]] end if;
+        end do;
+        groups := sort(groups,(g,h) -&gt; g[1]&lt;h[1]);
+        maps := [op(maps),[groups,[],"double-merge"]];
+    end do; end do;
+    # Six adjacent triple mergings.
+    for xx to 6 do
+        cyc := [seq(1+((xx+jj-1) mod 6),jj=0..5)];
+        groups := [[cyc[1],cyc[2],cyc[3]],seq([cyc[jj]],jj=4..6)];
+        maps := [op(maps),[groups,[],"triple-merge"]];
+    end do;
+    maps
+end proc:
+CR6 := select(Crossing,Words(6)):
+if nops(CR6)&lt;&gt;71 then error "Expected 71 crossing words" end if:
+F66 := BuildMaps():
+if nops(F66)&lt;&gt;66 then error "Expected 66 operations" end if:
+M66 := Matrix(66,71):
+for ii to 66 do for jj to 71 do
+    image := Lower(CR6[jj],F66[ii][1],F66[ii][2]);
+    if image[1]=[0,1,0,1] then M66[ii,jj] := N^image[2] end if;
+end do; end do:
+printf("Constructed the paper's 66 x 71 matrix.\n"):
+
+</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Heading1" layout="Normal" xml:space="preserve">3. Explicit polynomial kernel basis in the manuscript's normalization.</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Maple Input" layout="Normal" xml:space="preserve"># 3. Explicit polynomial kernel basis in the manuscript's normalization.
+# V contains coefficient columns, with crossing words ordered as CR6 above.
+# This is intentional basis data, NOT an asserted output from Maple NullSpace.
+# Every column is checked against ALL 66 operations below.
+# The final five rows are diag(N-2,1,1,N-2,1).
+# BEGIN GENERATED BASIS
+SavedWords := [
+    [0, 0, 0, 1, 0, 1],
+    [0, 0, 1, 0, 0, 1],
+    [0, 0, 1, 0, 1, 0],
+    [0, 0, 1, 0, 1, 1],
+    [0, 0, 1, 0, 1, 2],
+    [0, 0, 1, 0, 2, 1],
+    [0, 0, 1, 1, 0, 1],
+    [0, 0, 1, 2, 0, 1],
+    [0, 0, 1, 2, 0, 2],
+    [0, 0, 1, 2, 1, 2],
+    [0, 1, 0, 0, 0, 1],
+    [0, 1, 0, 0, 1, 0],
+    [0, 1, 0, 0, 1, 1],
+    [0, 1, 0, 0, 1, 2],
+    [0, 1, 0, 0, 2, 1],
+    [0, 1, 0, 1, 0, 0],
+    [0, 1, 0, 1, 0, 1],
+    [0, 1, 0, 1, 0, 2],
+    [0, 1, 0, 1, 1, 0],
+    [0, 1, 0, 1, 1, 1],
+    [0, 1, 0, 1, 1, 2],
+    [0, 1, 0, 1, 2, 0],
+    [0, 1, 0, 1, 2, 1],
+    [0, 1, 0, 1, 2, 2],
+    [0, 1, 0, 1, 2, 3],
+    [0, 1, 0, 2, 0, 1],
+    [0, 1, 0, 2, 0, 2],
+    [0, 1, 0, 2, 1, 0],
+    [0, 1, 0, 2, 1, 1],
+    [0, 1, 0, 2, 1, 2],
+    [0, 1, 0, 2, 1, 3],
+    [0, 1, 0, 2, 2, 1],
+    [0, 1, 0, 2, 3, 1],
+    [0, 1, 1, 0, 0, 1],
+    [0, 1, 1, 0, 1, 0],
+    [0, 1, 1, 0, 1, 1],
+    [0, 1, 1, 0, 1, 2],
+    [0, 1, 1, 0, 2, 1],
+    [0, 1, 1, 1, 0, 1],
+    [0, 1, 1, 2, 0, 1],
+    [0, 1, 1, 2, 0, 2],
+    [0, 1, 1, 2, 1, 2],
+    [0, 1, 2, 0, 0, 1],
+    [0, 1, 2, 0, 0, 2],
+    [0, 1, 2, 0, 1, 0],
+    [0, 1, 2, 0, 1, 1],
+    [0, 1, 2, 0, 1, 2],
+    [0, 1, 2, 0, 1, 3],
+    [0, 1, 2, 0, 2, 0],
+    [0, 1, 2, 0, 2, 1],
+    [0, 1, 2, 0, 2, 2],
+    [0, 1, 2, 0, 2, 3],
+    [0, 1, 2, 0, 3, 1],
+    [0, 1, 2, 0, 3, 2],
+    [0, 1, 2, 1, 0, 1],
+    [0, 1, 2, 1, 0, 2],
+    [0, 1, 2, 1, 1, 2],
+    [0, 1, 2, 1, 2, 0],
+    [0, 1, 2, 1, 2, 1],
+    [0, 1, 2, 1, 2, 2],
+    [0, 1, 2, 1, 2, 3],
+    [0, 1, 2, 1, 3, 2],
+    [0, 1, 2, 2, 0, 1],
+    [0, 1, 2, 2, 0, 2],
+    [0, 1, 2, 2, 1, 2],
+    [0, 1, 2, 3, 0, 1],
+    [0, 1, 2, 3, 0, 2],
+    [0, 1, 2, 3, 0, 3],
+    [0, 1, 2, 3, 1, 2],
+    [0, 1, 2, 3, 1, 3],
+    [0, 1, 2, 3, 2, 3]
+]:
+V := Matrix([
+    [2 - N, N - 1, -1, N^2 - 3*N + 2, 0],
+    [N^2 - 3*N + 2, -1, N - 1, 2 - N, 0],
+    [N^2 - 3*N + 2, -N^2 + 3*N - 1, -1, 2 - N, N^2 - 2*N],
+    [2*N - 2, 1 - N, 1, -2, N],
+    [1 - N, N - 2, 0, 1, 1 - N],
+    [1 - N, 1, -1, 1, -1],
+    [N - 2, 1, 1, N - 2, 0],
+    [2 - N, 0, -1, 0, 0],
+    [0, -1, 0, 2 - N, 0],
+    [0, 0, 0, 0, -1],
+    [N^2 - 3*N + 2, -N^2 + 3*N - 1, -1, 2 - N, N^2 - 2*N],
+    [2 - N, -1, N - 1, N^2 - 3*N + 2, 0],
+    [N - 2, 1 - N, 1, N - 2, N],
+    [0, 1, -1, 2 - N, -1],
+    [2 - N, N - 2, 0, 0, 1 - N],
+    [N^2 - 3*N + 2, N - 1, -1, 2 - N, 0],
+    [-N^2 + 3*N - 2, N^2 - 3*N + 1, 1, -N^2 + 3*N - 2, 0],
+    [0, 2 - N, 0, N - 2, 0],
+    [N - 2, 1, 1, N - 2, 0],
+    [2 - N, N - 1, -1, N^2 - 3*N + 2, 0],
+    [0, -1, 0, 2 - N, 0],
+    [2 - N, -1, 0, 0, 0],
+    [N - 2, 2 - N, 0, 0, 0],
+    [0, -1, 0, 0, 0],
+    [0, 1, 0, 0, 0],
+    [0, 0, 0, N - 2, 2 - N],
+    [N - 2, 2 - N, 0, 0, 0],
+    [0, 0, -1, 2 - N, 0],
+    [0, 0, 0, 2 - N, -1],
+    [0, 0, 1, -N^2 + 4*N - 4, 1],
+    [0, 0, 0, N - 2, 0],
+    [0, 0, 0, 0, -1],
+    [0, 0, 0, 0, 1],
+    [2*N - 2, 1 - N, 1, -2, N],
+    [N - 2, 1 - N, 1, N - 2, N],
+    [N^2 - 3*N + 2, -N^2 + 2*N - 1, N - 1, 2 - N, N^2 - 2*N],
+    [2 - N, N - 1, -1, 0, 1 - N],
+    [1 - N, N - 1, -1, 1, 1 - N],
+    [N^2 - 3*N + 2, N - 1, -1, 2 - N, 0],
+    [1 - N, 0, 0, 1, -1],
+    [0, -1, 0, 0, 0],
+    [0, 0, 0, 2 - N, -1],
+    [1 - N, N - 2, 0, 1, 1 - N],
+    [1 - N, 1, -1, 1, -1],
+    [0, 1, -1, 2 - N, -1],
+    [2 - N, N - 1, -1, 0, 1 - N],
+    [N - 2, 0, 2 - N, N - 2, 0],
+    [0, -1, 1, 0, 1],
+    [2 - N, N - 2, 0, 0, 1 - N],
+    [-N^2 + 4*N - 3, N^2 - 4*N + 3, 1, -1, -N^2 + 4*N - 2],
+    [1 - N, N - 1, -1, 1, 1 - N],
+    [N - 2, 2 - N, 0, 0, N - 2],
+    [N - 2, 2 - N, 0, 0, N - 2],
+    [1, -1, 1, -1, 1],
+    [0, 2 - N, 0, N - 2, 0],
+    [-N^2 + 4*N - 3, 0, 1, -1, 1],
+    [2 - N, 0, -1, 0, 0],
+    [-1, 0, 0, 1, -1],
+    [0, 0, 0, N - 2, 2 - N],
+    [1 - N, 0, 0, 1, -1],
+    [1, 0, 0, -1, 1],
+    [N - 2, 0, 0, 0, 0],
+    [-1, 0, 0, 1, -1],
+    [2 - N, -1, 0, 0, 0],
+    [0, 0, -1, 2 - N, 0],
+    [1, 0, 0, -1, 1],
+    [N - 2, 0, 0, 0, 0],
+    [0, 1, 0, 0, 0],
+    [0, 0, 1, 0, 0],
+    [0, 0, 0, N - 2, 0],
+    [0, 0, 0, 0, 1]
+]):
+
+# END GENERATED BASIS
+if CR6&lt;&gt;SavedWords then error "Partition ordering mismatch" end if:
+CheckMatrix(M66 . V,"all 66 equations annihilate V"):
+D0 := LinearAlgebra:-DiagonalMatrix([N-2,1,1,N-2,1]):
+CheckMatrix(V[67..71,1..5]-D0,"five-coordinate normalization"):
+printf("Read coordinates: alpha[67]=(N-2)t1, alpha[68]=t2,\n"):
+printf("alpha[69]=t3, alpha[70]=(N-2)t4, alpha[71]=t5.\n"):
+
+</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Heading1" layout="Normal" xml:space="preserve">3b. The manuscript's chosen 66-column determinant, exact over Q[N].</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Maple Input" layout="Normal" xml:space="preserve"># 3b. The manuscript's chosen 66-column determinant, exact over Q[N].
+# A quick run can set RUN_UNIFORM_RANK_CHECK=false at the top; a full run must
+# execute the determinant below and compare to the paper's exact expression.
+ExpectedDet66 := (N-4)^12*(N-2)*(N^2-3*N+1)^23:
+if RUN_UNIFORM_RANK_CHECK then
+    printf("Computing and comparing the 66 x 66 determinant (can be expensive)...\n");
+    det66 := LinearAlgebra:-Determinant(M66[1..66,1..66],method=fracfree):
+    detSign66 := normal(det66/ExpectedDet66):
+    if not evalb(detSign66=1 or detSign66=-1) then
+        error "The chosen determinant does not match equation (16) up to sign";
+    end if;
+    printf("PASS equation (16): determinant ratio = %a\n",detSign66);
+else
+    printf("SKIPPED: exact 66-column determinant. This is a QUICK run only.\n");
+end if:
+# The explicit factorisation has no zeros at any integer N&gt;=6.
+# That conclusion is made in the paper, not inferred from a finite N sweep.
+# A separate finite-rank observation in the manuscript concerns N=4.
+if RUN_N4_CHECK then
+    mAt4 := map(x -&gt; subs(N=4,x),M66):
+    if LinearAlgebra:-Rank(mAt4) &lt;&gt; 54 then error "Rank at N=4 is not 54" end if;
+    printf("PASS: rank M(4)=54\n");
+end if:
+
+</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Heading1" layout="Normal" xml:space="preserve">4. Rotation in the PREPRINT convention: last factor moves to the first.</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Maple Input" layout="Normal" xml:space="preserve"># 4. Rotation in the PREPRINT convention: last factor moves to the first.
+R := Matrix([[0,0,0,1,0],[0,0,0,0,1],[0,-1,1,0,1],
+             [1,-1,0,0,1],[1,0,0,-1,1]]):
+Id5 := LinearAlgebra:-IdentityMatrix(5):
+CheckMatrix(R . R . R-Id5,"R^3=I"):
+RotV := Matrix(71,5):
+for ii to 71 do
+    rw := Canon([CR6[ii][6],op(CR6[ii][1..5])]);
+    rr := 0;
+    for jj to 71 do if CR6[jj]=rw then rr:=jj; break; end if; end do;
+    if rr=0 then error "Rotated word not found" end if;
+    for jj to 5 do RotV[rr,jj] := V[ii,jj] end do;
+end do:
+CheckMatrix(RotV-V . R,"actual rotation agrees with coordinate R"):
+Pavg := (Id5+R+R . R)/3:
+C := Id5-Pavg:
+CheckMatrix(Pavg . Pavg-Pavg,"P is idempotent on the kernel"):
+
+</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Heading1" layout="Normal" xml:space="preserve">4b. Independently check the reflection action on the kernel.</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Maple Input" layout="Normal" xml:space="preserve"># 4b. Independently check the reflection action on the kernel.
+# Each V column has real polynomial entries. Reflection reverses tensor order,
+# followed by complex conjugation of coefficients; conjugation fixes these entries.
+ReflectV := Matrix(71,5):
+for ii to 71 do
+    rw := Canon([seq(CR6[ii][7-jj],jj=1..6)]):
+    rr := 0:
+    for jj to 71 do if CR6[jj]=rw then rr:=jj; break; end if; end do:
+    if rr=0 then error "Reflected crossing word missing" end if:
+    for jj to 5 do ReflectV[rr,jj] := V[ii,jj] end do:
+end do:
+CheckMatrix(M66 . ReflectV,"reflected basis vectors lie in ker M"):
+
+</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Heading1" layout="Normal" xml:space="preserve">5. Construct the contraction matrix from the actual partition p.</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Maple Input" layout="Normal" xml:space="preserve"># 5. Construct the contraction matrix from the actual partition p.
+# Upper pairs: (3,10),(4,9),(5,8),(6,7); pass positions 1,2,11,12.
+# It acts on xi tensor conjugate-reversal(xi).
+# F(xi)[a,b,c,d] = sum xi[a,b,i,j,k,l] conjugate(xi[d,c,i,j,k,l]).
+# On a pair of six-point partition words, the glued equality labels are
+# p -&gt; [1,2,3,4,5,6], q -&gt; [8,7,3,4,5,6]; outputs [1,2,7,8].
+# Count the connected components that miss the outputs; each contributes N.
+ContractCrossing := proc(w::list,v::list)
+    local parent,slots,words,which,aa,bb,out,roots,jj;
+    parent := Array(1..8,[seq(jj,jj=1..8)]);
+    slots := [[1,2,3,4,5,6],[8,7,3,4,5,6]];
+    words := [w,v];
+    for which to 2 do for aa to 6 do for bb to aa-1 do
+        if words[which][aa]=words[which][bb] then
+            Join(parent,slots[which][aa],slots[which][bb]);
+        end if;
+    end do; end do; end do;
+    out := [seq(Root(parent,jj),jj in [1,2,7,8])];
+    if Canon(out)&lt;&gt;[0,1,0,1] then return 0 end if;
+    roots := {seq(Root(parent,jj),jj=1..8)};
+    N^nops(roots minus {op(out)})
+end proc:
+G := Matrix(71,71):
+for ii to 71 do for jj to 71 do
+    G[ii,jj] := ContractCrossing(CR6[ii],CR6[jj]);
+end do; end do:
+B := map(factor,LinearAlgebra:-Transpose(V) . G . V):
+CheckMatrix(B-LinearAlgebra:-Transpose(B),"B is real symmetric"):
+printf("Computed B = transpose(V) G V:\n"):
+print(B);
+
+</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Heading1" layout="Normal" xml:space="preserve">6. Derive, rather than insert, the two coefficients.</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Maple Input" layout="Normal" xml:space="preserve"># 6. Derive, rather than insert, the two coefficients.
+# t is arbitrary, xi has coefficient vector V C t, z1=t1-t4, z2=t2-t5.
+# Qc represents q(Ct). Its first two rows/columns determine H if
+# Qc = transpose(DzMap) H DzMap; check the WHOLE identity.
+# Maple reserves D for differential operators; do not assign to or unprotect D.
+DzMap := Matrix([[1,0,0,-1,0],[0,1,0,0,-1]]):
+CheckMatrix(DzMap . Pavg,"DzMap P = 0, so z1,z2 are unchanged by I-P"):
+Qc := map(factor,LinearAlgebra:-Transpose(C) . B . C):
+H := Qc[1..2,1..2]:
+CheckMatrix(Qc-LinearAlgebra:-Transpose(DzMap) . H . DzMap,
+            "q(Ct) depends only on z1,z2 through H"):
+CheckZero(H[1,1]-H[2,2],"equal diagonal entries of H"):
+CheckZero(H[1,2]-H[2,1],"symmetric off-diagonal entries of H"):
+dN := factor(H[1,1]):
+eN := factor(H[1,2]):
+AN := factor((dN+eN)/2):
+BN := factor((dN-eN)/2):
+printf("DERIVED d_N, e_N, A_N, B_N (in this order):\n"):
+print(dN,eN,AN,BN);
+
+# Only now compare the derived answers with the manuscript's proposed formulas.
+CheckZero(AN-(N-4)*(2*N^2-9*N+8)/18,"A_N formula"):
+CheckZero(BN-(N-4)*(2*N^2-7*N+4)/2,"B_N formula"):
+printf("PASS: both displayed formulas follow from the contraction.\n"):
+
+# z1bar,z2bar are independent formal symbols standing for complex conjugates.
+# This avoids assumptions about conjugate(N) and checks a polynomial identity.
+q_z := expand(dN*(z1*z1bar+z2*z2bar)+eN*(z1bar*z2+z2bar*z1)):
+target_z := AN*(z1+z2)*(z1bar+z2bar)+BN*(z1-z2)*(z1bar-z2bar):
+CheckZero(q_z-target_z,"complex Hermitian sum-of-squares identity"):
+printf("PASS: q(Ct)=A_N |z1+z2|^2+B_N |z1-z2|^2 for COMPLEX t.\n"):
+
+</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Heading1" layout="Normal" xml:space="preserve">7. Positivity for ALL N&gt;=6: prove it from the quadratic factors.</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Maple Input" layout="Normal" xml:space="preserve"># 7. Positivity for ALL N&gt;=6: prove it from the quadratic factors.
+uA := expand(subs(N=6+s,2*N^2-9*N+8)):
+uB := expand(subs(N=6+s,2*N^2-7*N+4)):
+CheckZero(uA-(26+15*s+2*s^2),"shifted A factor"):
+CheckZero(uB-(34+17*s+2*s^2),"shifted B factor"):
+for jj from 0 to 2 do
+    if not evalb(coeff(uA,s,jj)&gt;0) then error "A positivity failed" end if;
+    if not evalb(coeff(uB,s,jj)&gt;0) then error "B positivity failed" end if;
+end do:
+printf("PASS: A_N,B_N&gt;0 for every real N&gt;=6.\n"):
+printf("At N=6, expected A_N=26/9, B_N=34; calculated values:\n"):
+print(subs(N=6,AN),subs(N=6,BN));
+
+# An additional check in an explicit basis of ker P.
+UV := Matrix([[0,1],[-1,1],[-1,1],[-1,0],[0,-1]]):
+CheckMatrix(Pavg . UV,"the displayed u,v lie in ker P"):
+J := map(factor,LinearAlgebra:-Transpose(UV) . B . UV):
+CheckMatrix(J-Matrix([[4*BN,-2*BN],[-2*BN,9*AN+BN]]),
+            "q(lambda*u+mu*v)=9*A_N*|mu|^2+B_N*|2*lambda-mu|^2"):
+
+</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Heading1" layout="Normal" xml:space="preserve">1. Parameterize the INPUT fixed space, using the shared normalized basis.</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Maple Input" layout="Normal" xml:space="preserve"># 1. Parameterize the INPUT fixed space, using the shared normalized basis.
+if not type(CR6,list) then error "Run the kernel setup groups at the top of this worksheet first" end if:
+if nops(CR6)&lt;&gt;71 then error "Expected 71 crossing partitions from the setup" end if:
+# R is the restriction of the preprint's T_r to ker M.
+# t=(b,c,a,b,c); no condition on the OUTPUT theta has been imposed.
+EmbedFixed := Matrix([[0,1,0],[0,0,1],[1,0,0],[0,1,0],[0,0,1]]):
+CheckMatrix(R . EmbedFixed-EmbedFixed,"input parameterization is fixed by R"):
+alpha := Vector(71):
+for ii to 71 do
+    alpha[ii] := expand(a*V[ii,3]+b*(V[ii,1]+V[ii,4])+c*(V[ii,2]+V[ii,5]));
+end do:
+
+
+
+</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Heading1" layout="Normal" xml:space="preserve">2. Partition composition for rotate-square-unrotate.</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Maple Input" layout="Normal" xml:space="preserve"># 2. Partition composition for rotate-square-unrotate.
+# Temporary labels are 1..9. Put the first partition at [1,2,3,6,5,4]
+# and the second at [4,5,6,9,8,7]; read outputs [1,2,3,9,8,7].
+# Internal connected components not meeting an output contribute N.
+SquareGlue := proc(w::list,v::list)
+    local parent,slots,words,which,aa,bb,jj,out,roots;
+    parent := Array(1..9,[seq(jj,jj=1..9)]);
+    slots := [[1,2,3,6,5,4],[4,5,6,9,8,7]];
+    words := [w,v];
+    for which to 2 do for aa to 6 do for bb to aa-1 do
+        if words[which][aa]=words[which][bb] then
+            Join(parent,slots[which][aa],slots[which][bb]);
+        end if;
+    end do; end do; end do;
+    out := [seq(Root(parent,jj),jj in [1,2,3,9,8,7])];
+    roots := {seq(Root(parent,jj),jj=1..9)};
+    [Canon(out),nops(roots minus {op(out)})]
+end proc:
+
+
+
+</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Heading1" layout="Normal" xml:space="preserve">3. Compute every crossing coefficient. Sum over ORDERED pairs of partitions.</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Maple Input" layout="Normal" xml:space="preserve"># 3. Compute every crossing coefficient. Sum over ORDERED pairs of partitions.
+# There are no complex conjugates in this operation: it squares A_xi.
+beta := Vector(71):
+for ii to 71 do for jj to 71 do
+    squareImage := SquareGlue(CR6[ii],CR6[jj]);
+    if not Crossing(squareImage[1]) then next end if;
+    outrow := 0;
+    for rr to 71 do
+        if CR6[rr]=squareImage[1] then outrow:=rr; break; end if;
+    end do;
+    if outrow=0 then error "Crossing output not found" end if;
+    beta[outrow] := beta[outrow]+N^squareImage[2]*alpha[ii]*alpha[jj];
+end do; end do:
+beta := map(expand,beta):
+printf("Computed all 71 crossing coefficients of theta.\n"):
+
+
+
+</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Heading1" layout="Normal" xml:space="preserve">4. Display the actual quadratic polynomials, including any zero rows.</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Maple Input" layout="Normal" xml:space="preserve"># 4. Display the actual quadratic polynomials, including any zero rows.
+# This is also a 71 x 6 table in monomial order a^2,ab,ac,b^2,bc,c^2.
+CoeffABC := proc(f,powers::list)
+    coeff(coeff(coeff(expand(f),a,powers[1]),b,powers[2]),c,powers[3])
+end proc:
+Powers2 := [[2,0,0],[1,1,0],[1,0,1],[0,2,0],[0,1,1],[0,0,2]]:
+Mon2 := [a^2,a*b,a*c,b^2,b*c,c^2]:
+QuadTable := Matrix(71,6):
+if SHOW_ALL_SQUARING_ROWS then printf("Rows below are [partition word, beta_p(a,b,c)].\n") end if:
+for ii to 71 do
+    CheckZero(subs({a=tScale*a,b=tScale*b,c=tScale*c},beta[ii])-tScale^2*beta[ii],
+              cat("homogeneity of beta row ",ii));
+    for jj to 6 do QuadTable[ii,jj] := factor(CoeffABC(beta[ii],Powers2[jj])) end do;
+    CheckZero(beta[ii]-add(QuadTable[ii,jj]*Mon2[jj],jj=1..6),
+              cat("six-monomial reconstruction, row ",ii));
+    if SHOW_ALL_SQUARING_ROWS then print([CR6[ii],collect(beta[ii],[a,b,c],factor)]); end if;
+end do:
+printf("PASS: all 71 polynomials are homogeneous quadratic (or zero).\n"):
+
+
+
+</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Heading1" layout="Normal" xml:space="preserve">5. The assumption theta in ker M forces M66 . beta = 0.</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Maple Input" layout="Normal" xml:space="preserve"># 5. The assumption theta in ker M forces M66 . beta = 0.
+# We only need two particular NECESSARY rows, not a characterization of
+# every substituted row. Row 48 caps positions 3,4. Row 59 merges the
+# disjoint cyclic pairs {3,4} and {6,1}, in the shared map ordering.
+kernelOutput := map(expand,M66 . beta):
+kernelCap := factor(kernelOutput[48]):
+kernelDoubleMerge := factor(kernelOutput[59]):
+printf("Two actual necessary kernel equations (each must vanish):\n"):
+print(kernelCap,kernelDoubleMerge);
+
+# For agreement with the earlier explanatory note, take invertible linear
+# combinations of these two equations. The denominator is nonzero on N&gt;=6.
+# deltaGH(6+s)=38+37s+11s^2+s^3 &gt;0 for s&gt;=0.
+deltaGH := N^3-7*N^2+13*N-4:
+CheckZero(expand(subs(N=6+s,deltaGH))-(38+37*s+11*s^2+s^3),
+          "nonvanishing change of two kernel equations"):
+gN := expand(normal(((3-N)*kernelCap+(N-2)*kernelDoubleMerge)/deltaGH)):
+hN := expand(normal((-(N^2-4*N+2)*kernelCap+N*kernelDoubleMerge)/deltaGH)):
+CheckZero(denom(normal(gN))-1,"g_N is polynomial, with no remaining denominator"):
+CheckZero(denom(normal(hN))-1,"h_N is polynomial, with no remaining denominator"):
+CheckZero(kernelCap-N*gN+(N-2)*hN,"first direct row = N*g_N-(N-2)*h_N"):
+CheckZero(kernelDoubleMerge-(N^2-4*N+2)*gN-(3-N)*hN,
+          "second direct row = (N^2-4N+2)*g_N+(3-N)*h_N"):
+
+
+
+</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Heading1" layout="Normal" xml:space="preserve">6. Under the ADDITIONAL assumption theta in Fix(R), the true kernel</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Maple Input" layout="Normal" xml:space="preserve"># 6. Under the ADDITIONAL assumption theta in Fix(R), the true kernel
+# coordinates satisfy s1=s4 and s2=s5. The normalization says
+# beta[67]=(N-2)s1, beta[68]=s2, beta[69]=s3,
+# beta[70]=(N-2)s4, beta[71]=s5.
+# Thus beta[67]-beta[70]=0 is necessary. The other difference is automatic
+# for this square, as the following exact check shows.
+kN := expand(beta[67]-beta[70]):
+CheckZero(beta[68]-beta[71],"the second fixed-coordinate condition is automatic"):
+printf("DERIVED necessary equations for theta in Fix(R):\n"):
+print('g_N'=collect(gN,[a,b,c],factor));
+print('h_N'=collect(hN,[a,b,c],factor));
+print('k_N'=collect(kN,[a,b,c],factor));
+
+# Only after deriving the equations, compare with the proposed formulas.
+gExpected := a^2-2*(N-2)^2*a*b+4*a*c+(N-2)^2*(N+2)*b^2
+             -4*(N-2)*(N-3)*b*c+(N^2-8*N+17)*c^2:
+hExpected := (2*N-5)*a^2-2*(N-2)*(N^2-4*N+6)*a*b+2*(N+1)*a*c
+             +(N-2)^2*(5*N-4)*b^2-4*(N-2)*(2*N-5)*b*c
+             +(N^2-8*N+19)*c^2:
+kExpected := 2*a^2-2*(N-2)*(N-4)*a*b-2*a*c
+             +(N-2)^2*(N^2-8*N+10)*b^2+4*(N-2)^2*b*c
+             -(N-4)*(2*N-5)*c^2:
+CheckZero(gN-gExpected,"g_N matches the explanatory note"):
+CheckZero(hN-hExpected,"h_N matches the explanatory note"):
+CheckZero(kN-kExpected,"k_N matches the explanatory note"):
+printf("At N=6 the three derived forms are:\n"):
+print(subs(N=6,gN),subs(N=6,hN),subs(N=6,kN));
+printf("SQUARING STAGE COMPLETE. No common-zero assertion has been assumed.\n"):
+</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Heading1" layout="Normal" xml:space="preserve">7. Direct comparison with the manuscript's final two-case algebra.</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Maple Input" layout="Normal" xml:space="preserve"># 7. Direct comparison with the manuscript's final two-case algebra.
+# These checks start from g_N, h_N, k_N derived above by partition gluing;
+# the expected identities are then tested as exact polynomials.
+CheckZero(hN+kN-(N-1)*gN-(N-2)*
+          (a-2*(N-2)*b+(N-4)*c)*(a+2*(N-2)*b-(N-2)*c),
+          "equation (28), product of two linear factors"):
+
+# Case 1 in equation (29): a=2(N-2)b-(N-4)c.
+aCase1 := 2*(N-2)*b-(N-4)*c:
+g1 := expand(subs(a=aCase1,gN)):
+k1 := expand(subs(a=aCase1,kN)):
+g1Expected := (14-3*N)*(N-2)^2*b^2+2*(N^2-10*N+26)*(N-2)*b*c
+              +(2*N^2-20*N+49)*c^2:
+g1MinusK1Expected := (N-5)*((2*N-9)*c^2-(N-4)*(N-2)^2*b^2):
+CheckZero(g1-g1Expected,"equation (29), first expression"):
+CheckZero(g1-k1-g1MinusK1Expected,"equation (29), second expression"):
+
+# Eliminate b^2 using g1-k1=0, obtaining the paper's linear relation in b,c.
+Dpoly := N^2-10*N+26:
+Bpoly := (N-4)*(N-5)*(N-8)-1:
+# Here (N-5)&lt;&gt;0 in the region N&gt;=6.
+CheckZero((N-5)*(N-4)*g1-(3*N-14)*(g1-k1)
+          -(N-5)*2*c*((N-4)*(N-2)*Dpoly*b+Bpoly*c),
+          "Case 1 elimination following equation (30)"):
+# Equation (31) follows algebraically under the two assumed equations
+# and c&lt;&gt;0; its divisibility contradiction is proved in the manuscript.
+
+# Case 2 in equation (32): v=(N-2)b-c and a=-2(N-2)b+(N-2)c.
+# Thus b=(v+c)/(N-2) and a=-2v+(N-4)c.
+Epoly := N^2-4*N+2:
+g2 := expand(normal(subs({a=-2*v+(N-4)*c,b=(v+c)/(N-2)},gN))):
+k2 := expand(normal(subs({a=-2*v+(N-4)*c,b=(v+c)/(N-2)},kN))):
+g2Expected := (5*N-2)*v^2-2*N*(N-5)*v*c-3*(N-5)*c^2:
+k2Expected := Epoly*v^2-(N-5)*(N-2)*c^2:
+CheckZero(g2-g2Expected,"equation (32), g"):
+CheckZero(k2-k2Expected,"equation (32), k"):
+CheckZero(Epoly*g2-(5*N-2)*k2
+          -2*(N-5)*c*((N^2-1)*c-N*Epoly*v),
+          "equation (33), eliminate v^2"):
+# Equation (34) is the consequent equality under g2=k2=0,c&lt;&gt;0.
+# Its modular contradiction is a mathematical argument in the paper.
+printf("PASS: manuscript equations (28)-(33) verified symbolically.\n"):
+printf("Moment-six source reached the final statement without a Maple error.\n"):
+</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Heading1" layout="Normal" xml:space="preserve">8. Compare another polynomial basis AFTER executing this file.</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Maple Input" layout="Normal" xml:space="preserve"># 8. Compare another polynomial basis AFTER executing this file.
+# Wpaper must have the SAME partition-row order and five columns.
+# Do NOT assume Maple NullSpace chooses the same normalized basis.
+# This procedure derives Wpaper=V S, checks ALL 71 rows and full column rank.
+# Use: S := CompareBasis(Wpaper);
+# Its coordinates satisfy t_explainer = S . t_paper.
+CompareBasis := proc(Wpaper)
+    local S,deltaS;
+    if LinearAlgebra:-RowDimension(Wpaper)&lt;&gt;71 or
+       LinearAlgebra:-ColumnDimension(Wpaper)&lt;&gt;5 then
+        error "Expected a 71 x 5 matrix in CR6 row order";
+    end if;
+    S := map(normal,LinearAlgebra:-MatrixInverse(D0) . Wpaper[67..71,1..5]);
+    CheckMatrix(Wpaper-V . S,"Wpaper = V S, all rows checked");
+    deltaS := factor(LinearAlgebra:-Determinant(S));
+    if deltaS=0 then error "Wpaper is not generically a basis" end if;
+    printf("Basis-change determinant; check exceptional parameter values:\n");
+    print(deltaS);
+    S
+end proc:
+
+printf("Quadratic-form computation finished.\n"):
+printf("Keep the Maple version and outputs with the reproducibility files.\n"):
+# Computational checks do not replace the categorical argument or the
+# divisibility arguments in the manuscript. All Maple code must be executed
+# in the author's Maple installation before public release.
+</Text-field>
+    </Input>
+  </Group>
+</Worksheet>

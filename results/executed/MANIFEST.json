@@ -1,0 +1,18 @@
+[
+  {
+    "file": "results/executed/MomentLevel5_executed.mw",
+    "sha256": "0ca7d171f2e9d8c7a376cd922995b80a74b8719be23ff82cf1925915a7565417",
+    "size_bytes": 33065,
+    "input_group_count": 13,
+    "saved_output_group_count": 5,
+    "input_equivalence": "All executable groups match corresponding source worksheet groups after normalizing Maple XML escapes; saved file also has an extra encoded worksheet input group used by Maple display."
+  },
+  {
+    "file": "results/executed/MomentLevel6_executed.mw",
+    "sha256": "92c131961261f69bf612aef0026094925dbc90fa0b3304593a93951717c1720a",
+    "size_bytes": 88082,
+    "input_group_count": 37,
+    "saved_output_group_count": 28,
+    "input_equivalence": "All executable groups match corresponding source worksheet groups after normalizing Maple XML escapes; saved file also has an extra encoded worksheet input group used by Maple display."
+  }
+]

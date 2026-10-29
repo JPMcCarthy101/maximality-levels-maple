@@ -1,0 +1,107 @@
+[
+  {
+    "id": "M5-1",
+    "paper": "(13), Section 7.1",
+    "source": "src/MomentLevel5.mpl",
+    "section": "2. Enumerate",
+    "expected": "10 crossing partitions, 10 operations, 10x10 matrix"
+  },
+  {
+    "id": "M5-2",
+    "paper": "(14)",
+    "source": "src/MomentLevel5.mpl",
+    "section": "3. Check",
+    "expected": "determinant matches (N-4)(N^2-3N+1)^2 up to sign"
+  },
+  {
+    "id": "M5-3",
+    "paper": "Proposition 7.3",
+    "source": "src/MomentLevel5.mpl",
+    "section": "4. At N=4",
+    "expected": "rank 9; eta with +1 for 3 blocks and -2 for 2 blocks"
+  },
+  {
+    "id": "M5-4",
+    "paper": "Proposition 7.3",
+    "source": "src/MomentLevel5.mpl",
+    "section": "5. Direct verify",
+    "expected": "discrete-partition vector identity for all 4^5 index tuples"
+  },
+  {
+    "id": "M6-1",
+    "paper": "(15), Proposition 7.4",
+    "source": "src/MomentLevel6.mpl",
+    "section": "2. Reconstruct",
+    "expected": "71 crossing partitions; 66 operations in families 15+30+6+9+6"
+  },
+  {
+    "id": "M6-2",
+    "paper": "(16)",
+    "source": "src/MomentLevel6.mpl",
+    "section": "3b. The manuscript",
+    "expected": "chosen 66x66 determinant matches printed factorization up to sign"
+  },
+  {
+    "id": "M6-3",
+    "paper": "Paragraph after Proposition 7.4",
+    "source": "src/MomentLevel6.mpl",
+    "section": "3b. The manuscript",
+    "expected": "rank 54 at N=4"
+  },
+  {
+    "id": "M6-4",
+    "paper": "Proposition 7.6",
+    "source": "src/MomentLevel6.mpl",
+    "section": "3. Explicit polynomial",
+    "expected": "M V=0 and last five rows diag(N-2,1,1,N-2,1)"
+  },
+  {
+    "id": "M6-5",
+    "paper": "Proposition 7.6, (17)",
+    "source": "src/MomentLevel6.mpl",
+    "section": "4. Rotation, 4b. Reflection",
+    "expected": "R^3=I; rotated vectors agree with R; reflected columns lie in ker M"
+  },
+  {
+    "id": "M6-6",
+    "paper": "(18)-(19)",
+    "source": "src/MomentLevel6.mpl",
+    "section": "4. Rotation",
+    "expected": "P^2=P; fixed-space parameterisation"
+  },
+  {
+    "id": "M6-7",
+    "paper": "(20)",
+    "source": "src/MomentLevel6.mpl",
+    "section": "5. Construct; 6. Derive; 7. Positivity",
+    "expected": "derived coefficients A_N,B_N; complex quadratic identity and positivity for N>=6"
+  },
+  {
+    "id": "M6-8",
+    "paper": "(21)-(23)",
+    "source": "src/MomentLevel6.mpl",
+    "section": "2. Partition composition; 3. Compute",
+    "expected": "all 71 beta crossing coefficients after rotate-square-rotate"
+  },
+  {
+    "id": "M6-9",
+    "paper": "(24)-(25)",
+    "source": "src/MomentLevel6.mpl",
+    "section": "5. The assumption",
+    "expected": "g_N,h_N obtained from two actual matrix rows"
+  },
+  {
+    "id": "M6-10",
+    "paper": "(26)",
+    "source": "src/MomentLevel6.mpl",
+    "section": "6. Under the additional",
+    "expected": "k_N=beta[67]-beta[70] and printed polynomial"
+  },
+  {
+    "id": "M6-11",
+    "paper": "(28)-(33)",
+    "source": "src/MomentLevel6.mpl",
+    "section": "7. Direct comparison",
+    "expected": "factorisation and algebra of both cases"
+  }
+]

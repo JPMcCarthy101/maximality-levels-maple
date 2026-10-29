@@ -1,0 +1,971 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Worksheet>
+<Version major="2026" minor="1"/>
+<Label-Scheme value="2" prefix=""/>
+<View-Properties presentation="false" autoexpanding_sections="true" UserProfileName="Maple Default Profile" NumericFormat-ApplyInteger="true" NumericFormat-ApplyRational="true" NumericFormat-ApplyExponent="false" editable="true">
+<Hide name="Group Range"/>
+</View-Properties>
+<MapleNet-Properties prettyprint="3" compactdisplay="false" preplot="" helpbrowser="standard" echo="1" scientificx="true" unitattributes="&quot;fontweight&quot; = &quot;bold&quot;" writeScrollableTableTypesetting="true" imaginaryunit="I" longdelim="true" elisiontermsthreshold="10000" elisiondigitsbefore="100" plotdevice="inline" elisiontermsbefore="100" historytimestamp="false" indentamount="4" plotoutput="terminal" screenpixelheight="768" rtablesize="[10, 10]" useclientjvm="true" format="worksheet" labelwidth="20" postplot="" typesetting="extended" elisiondigitsthreshold="10000" ansilprint="false" labelling="true" verboseproc="1" latexwidth="8.0" warnlevel="3" displayprecision="-1" elisiondigitsafter="100" errorbreak="1" plotoptions="" plotdriver="opengl" quiet="false" elisiontermsafter="100" screenwidth="79" ansi="false" ansicolor="[]" showassumed="1" trailingsemicolon="true" errorcursor="false" screenheight="25" prompt="&gt; " ShowLabels="true"/>
+<Styles>
+<Font name="Heading 1" background="[255,255,255]" bold="true" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="18" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Warning" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="2D Output" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Heading 4" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="true" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Line Printed Output" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Heading 2" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="16" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Maple Output" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="2D Inert Output" background="[255,255,255]" bold="false" executable="true" family="Times New Roman" foreground="[144,144,144]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Heading 3" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="14" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Diagnostic" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[40,120,40]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Ordered List 1" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Maple Input" background="[255,255,255]" bold="true" executable="true" family="Monospaced" foreground="[120,0,14]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Text Output" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Ordered List 2" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Ordered List 3" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Ordered List 4" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Ordered List 5" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Annotation Title" background="[255,255,255]" bold="true" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="18" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Header and Footer" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="HyperlinkError" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[171,41,204]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="true" strikethrough="false" placeholder="false"/>
+<Font name="Atomic Variable" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[175,0,175]" italic="true" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="HyperlinkWarning" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="true" strikethrough="false" placeholder="false"/>
+<Font name="Dictionary Hyperlink" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[147,0,15]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="true" strikethrough="false" placeholder="false"/>
+<Font name="2D Math" background="[255,255,255]" bold="false" executable="true" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Bullet Item" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Maple Plot" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Annotation Text" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="List Item" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Dash Item" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="2D Input" background="[255,255,255]" bold="false" executable="true" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Error" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[171,41,204]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Title" background="[255,255,255]" bold="true" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="24" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Text" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Normal" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Caption Reference" background="[255,255,255]" bold="true" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Code" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans Mono" foreground="[255,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Maple Input Placeholder" background="[255,255,255]" bold="true" executable="true" family="Monospaced" foreground="[200,0,200]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="true"/>
+<Font name="Equation Label" background="[255,255,255]" bold="true" executable="false" family="Monospaced" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Author" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Font name="Hyperlink" background="[255,255,255]" bold="false" executable="false" family="DejaVu Sans" foreground="[18,93,153]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="true" strikethrough="false" placeholder="false"/>
+<Font name="Caption Text" background="[255,255,255]" bold="true" executable="false" family="DejaVu Sans" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="11" subscript="false" superscript="false" underline="false" strikethrough="false" placeholder="false"/>
+<Layout name="Heading 1" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="8" spacebelow="4" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Warning" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Heading 4" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="8" spacebelow="2" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Line Printed Output" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="any" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Heading 2" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="16" spacebelow="8" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Maple Output" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.3" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Heading 3" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="8" spacebelow="2" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Diagnostic" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="any" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Ordered List 1" alignment="left" bullet="numeric" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix="."/>
+<Layout name="Text Output" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="newline" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Ordered List 2" alignment="left" bullet="alphabetic" firstindent="0" leftmargin="36" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix="."/>
+<Layout name="Ordered List 3" alignment="left" bullet="roman" firstindent="0" leftmargin="72" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix="."/>
+<Layout name="Ordered List 4" alignment="left" bullet="ALPHABETIC" firstindent="0" leftmargin="108" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix="."/>
+<Layout name="Ordered List 5" alignment="left" bullet="ROMAN" firstindent="0" leftmargin="144" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix="."/>
+<Layout name="Annotation Title" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="12" spacebelow="12" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="HyperlinkError" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="HyperlinkWarning" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Bullet Item" alignment="left" bullet="dot" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Maple Plot" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="List Item" alignment="left" bullet="indent" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Dash Item" alignment="left" bullet="dash" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Error" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Title" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="12" spacebelow="12" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Normal" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.2" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Author" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="8" spacebelow="8" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Pencil-style name="Pencil 1" pen-color="[0,0,0]" pen-height="1.0" pen-width="1.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 2" pen-color="[0,0,255]" pen-height="1.0" pen-width="1.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 3" pen-color="[0,0,0]" pen-height="3.0" pen-width="3.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 4" pen-color="[0,0,255]" pen-height="3.0" pen-width="3.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 5" pen-color="[255,0,0]" pen-height="5.0" pen-width="5.0" pen-opacity="1.0"/>
+<Highlighter-style name="Highlighter 5" pen-color="[255,255,0]" pen-height="48.0" pen-width="48.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 3" pen-color="[51,255,0]" pen-height="24.0" pen-width="24.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 4" pen-color="[0,255,255]" pen-height="32.0" pen-width="32.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 1" pen-color="[255,153,255]" pen-height="12.0" pen-width="8.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 2" pen-color="[255,204,0]" pen-height="14.0" pen-width="14.0" pen-opacity="0.8"/>
+</Styles>
+<Startup-Code startupcode=""/>
+<Task-table>
+	<Task-category name="&lt;default&gt;"/>
+</Task-table>
+<Task/>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L2" drawlabel="true">
+<Input><Text-field style="Title" layout="Normal">Moment level six: paper equations (15)-(34)</Text-field>
+</Input>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L3" drawlabel="true">
+<Input><Text-field style="Text" layout="Normal">Self-contained symbolic source; run all Maple input groups in order. Full determinant may take significant time. Maple execution has not yet been performed.</Text-field>
+</Input>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L4" drawlabel="true">
+<Input><Text-field style="Maple Input" layout="Normal"># Moment level six, self-contained exact symbolic verification.
+# Derived from original author notebooks and the 2026 AI-assisted sources.
+# This file has NOT been executed in Maple in the present environment.
+# Run from a clean session; preserve any failure messages and Maple version.
+restart:
+<Font encoding="UTF-8">printf(&quot;Moment six; Maple version: %a\134n&quot;,kernelopts(version)):
+</Font>RUN_UNIFORM_RANK_CHECK := true:  # Required for the complete run; expensive
+RUN_N4_CHECK := true:           # Optional retained N=4 observation
+SHOW_ALL_SQUARING_ROWS := false: # Set true to display all 71 beta polynomials
+
+</Text-field>
+</Input>
+<Output><Text-field style="Line Printed Output" layout="Line Printed Output">Moment six; Maple version: `Maple 2026.1, X86 64 WINDOWS, Jun 04 2026, Build ID 2018217`
+</Text-field>
+</Output>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L5" drawlabel="true">
+<Input><Text-field style="Heading1" opaque="false" subscript="false" underline="false" superscript="false" bold="false" foreground="[0,0,0]" italic="false" executable="false" selection-placeholder="false" size="12" readonly="false" background="[255,255,255]" strikethrough="false" placeholder="false" family="Times New Roman" font_style_name="Heading1" layout="Normal">1. Elementary checks and partition operations.</Text-field>
+</Input>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L6" drawlabel="true">
+<Input><Text-field style="Maple Input" layout="Normal"># 1. Elementary checks and partition operations.
+CheckZero := proc(expr, label::string)
+    if normal(expand(expr)) &lt;&gt; 0 then error &quot;FAILED: %1&quot;, label end if;
+    NULL
+end proc:
+CheckMatrix := proc(A, label::string)
+    local ii,jj;
+    for ii to LinearAlgebra:-RowDimension(A) do
+        for jj to LinearAlgebra:-ColumnDimension(A) do
+            CheckZero(A[ii,jj],cat(label,&quot; [&quot;,ii,&quot;,&quot;,jj,&quot;]&quot;));
+        end do;
+    end do;
+<Font encoding="UTF-8">    printf(&quot;PASS: %s\134n&quot;,label);
+</Font>    NULL
+end proc:
+Canon := proc(w::list)
+    local seen,nextid,xx,out;
+    seen := table(); nextid := 0; out := [];
+    for xx in w do
+        if not assigned(seen[xx]) then
+            seen[xx] := nextid; nextid := nextid+1;
+        end if;
+        out := [op(out),seen[xx]];
+    end do;
+    out
+end proc:
+Words := proc(nn::nonnegint)
+    local ws,newws,stage,w,mm,jj;
+    ws := [[]];
+    for stage to nn do
+        newws := [];
+        for w in ws do
+            if nops(w)=0 then mm := -1 else mm := max(op(w)) end if;
+            for jj from 0 to mm+1 do newws := [op(newws),[op(w),jj]] end do;
+        end do;
+        ws := newws;
+    end do;
+    ws
+end proc:
+Crossing := proc(w::list)
+    local aa,bb,cc,dd,nn;
+    nn := nops(w);
+    for aa to nn-3 do for bb from aa+1 to nn-2 do
+        for cc from bb+1 to nn-1 do for dd from cc+1 to nn do
+            if w[aa]=w[cc] and w[bb]=w[dd] and w[aa]&lt;&gt;w[bb] then
+                return true;
+            end if;
+        end do; end do;
+    end do; end do;
+    false
+end proc:
+Root := proc(parent,xx::posint)
+    local rr; rr := xx;
+    while parent[rr]&lt;&gt;rr do rr := parent[rr] end do;
+    rr
+end proc:
+Join := proc(parent,xx::posint,yy::posint)
+    parent[Root(parent,xx)] := Root(parent,yy);
+    NULL
+end proc:
+Lower := proc(w::list,groups::list,caps::list)
+    local parent,nn,g,jj,out,roots;
+    nn := max(op(w))+1;
+    parent := Array(1..nn,[seq(jj,jj=1..nn)]);
+    for g in [op(groups),op(caps)] do
+        for jj from 2 to nops(g) do
+            Join(parent,w[g[1]]+1,w[g[jj]]+1);
+        end do;
+    end do;
+    out := [seq(Root(parent,w[g[1]]+1),g in groups)];
+    roots := {seq(Root(parent,jj),jj=1..nn)};
+    [Canon(out),nops(roots minus {op(out)})]
+end proc:
+
+</Text-field>
+</Input>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L7" drawlabel="true">
+<Input><Text-field style="Heading1" opaque="false" subscript="false" underline="false" superscript="false" bold="false" foreground="[0,0,0]" italic="false" executable="false" selection-placeholder="false" size="12" readonly="false" background="[255,255,255]" strikethrough="false" placeholder="false" family="Times New Roman" font_style_name="Heading1" layout="Normal">2. Construct the 66 operations of Proposition 7.4.</Text-field>
+</Input>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L8" drawlabel="true">
+<Input><Text-field style="Maple Input" layout="Normal"># 2. Construct the 66 operations of Proposition 7.4.
+# Each map is [output groups, capped pairs, family label]. Inputs are 1..6.
+BuildMaps := proc()
+    local maps,aa,bb,cc,dd,xx,yy,jj,cyc,groups,edges,used;
+    maps := [];
+    # 15 restrictions to four positions.
+    for aa to 3 do for bb from aa+1 to 4 do
+        for cc from bb+1 to 5 do for dd from cc+1 to 6 do
+            maps := [op(maps),[[[aa],[bb],[cc],[dd]],[],&quot;restriction&quot;]];
+        end do; end do;
+    end do; end do;
+    # 30 singleton deletions followed by an adjacent merging.
+    for xx to 6 do for yy to 6 do
+        if xx=yy then next end if;
+        cyc := [seq(1+((yy+jj-1) mod 6),jj=0..5)];
+        cyc := select(jj -&gt; jj&lt;&gt;xx,cyc);
+        groups := [[cyc[1],cyc[2]],seq([cyc[jj]],jj=3..5)];
+        maps := [op(maps),[groups,[],&quot;delete-merge&quot;]];
+    end do; end do;
+    # Six caps, each deleting both adjacent legs.
+    for xx to 6 do
+        cyc := [seq(1+((xx+jj-1) mod 6),jj=0..5)];
+        groups := [seq([cyc[jj]],jj=3..6)];
+        maps := [op(maps),[groups,[[cyc[1],cyc[2]]],&quot;cap&quot;]];
+    end do;
+    # Nine disjoint pairs of cyclic adjacent mergings.
+    edges := [{1,2},{2,3},{3,4},{4,5},{5,6},{6,1}];
+    for aa to 5 do for bb from aa+1 to 6 do
+        if nops(edges[aa] intersect edges[bb])&lt;&gt;0 then next end if;
+        used := edges[aa] union edges[bb];
+        groups := [sort([op(edges[aa])]),sort([op(edges[bb])])];
+        for jj to 6 do
+            if not member(jj,used) then groups := [op(groups),[jj]] end if;
+        end do;
+        groups := sort(groups,(g,h) -&gt; g[1]&lt;h[1]);
+        maps := [op(maps),[groups,[],&quot;double-merge&quot;]];
+    end do; end do;
+    # Six adjacent triple mergings.
+    for xx to 6 do
+        cyc := [seq(1+((xx+jj-1) mod 6),jj=0..5)];
+        groups := [[cyc[1],cyc[2],cyc[3]],seq([cyc[jj]],jj=4..6)];
+        maps := [op(maps),[groups,[],&quot;triple-merge&quot;]];
+    end do;
+    maps
+end proc:
+CR6 := select(Crossing,Words(6)):
+if nops(CR6)&lt;&gt;71 then error &quot;Expected 71 crossing words&quot; end if:
+F66 := BuildMaps():
+if nops(F66)&lt;&gt;66 then error &quot;Expected 66 operations&quot; end if:
+M66 := Matrix(66,71):
+for ii to 66 do for jj to 71 do
+    image := Lower(CR6[jj],F66[ii][1],F66[ii][2]);
+    if image[1]=[0,1,0,1] then M66[ii,jj] := N^image[2] end if;
+end do; end do:
+<Font encoding="UTF-8">printf(&quot;Constructed the paper's 66 x 71 matrix.\134n&quot;):
+</Font>
+</Text-field>
+</Input>
+<Output><Text-field style="Line Printed Output" layout="Line Printed Output">Constructed the paper's 66 x 71 matrix.
+</Text-field>
+</Output>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L9" drawlabel="true">
+<Input><Text-field style="Heading1" opaque="false" subscript="false" underline="false" superscript="false" bold="false" foreground="[0,0,0]" italic="false" executable="false" selection-placeholder="false" size="12" readonly="false" background="[255,255,255]" strikethrough="false" placeholder="false" family="Times New Roman" font_style_name="Heading1" layout="Normal">3. Explicit polynomial kernel basis in the manuscript's normalization.</Text-field>
+</Input>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L10" drawlabel="true">
+<Input><Text-field style="Maple Input" layout="Normal"># 3. Explicit polynomial kernel basis in the manuscript's normalization.
+# V contains coefficient columns, with crossing words ordered as CR6 above.
+# This is intentional basis data, NOT an asserted output from Maple NullSpace.
+# Every column is checked against ALL 66 operations below.
+# The final five rows are diag(N-2,1,1,N-2,1).
+# BEGIN GENERATED BASIS
+SavedWords := [
+    [0, 0, 0, 1, 0, 1],
+    [0, 0, 1, 0, 0, 1],
+    [0, 0, 1, 0, 1, 0],
+    [0, 0, 1, 0, 1, 1],
+    [0, 0, 1, 0, 1, 2],
+    [0, 0, 1, 0, 2, 1],
+    [0, 0, 1, 1, 0, 1],
+    [0, 0, 1, 2, 0, 1],
+    [0, 0, 1, 2, 0, 2],
+    [0, 0, 1, 2, 1, 2],
+    [0, 1, 0, 0, 0, 1],
+    [0, 1, 0, 0, 1, 0],
+    [0, 1, 0, 0, 1, 1],
+    [0, 1, 0, 0, 1, 2],
+    [0, 1, 0, 0, 2, 1],
+    [0, 1, 0, 1, 0, 0],
+    [0, 1, 0, 1, 0, 1],
+    [0, 1, 0, 1, 0, 2],
+    [0, 1, 0, 1, 1, 0],
+    [0, 1, 0, 1, 1, 1],
+    [0, 1, 0, 1, 1, 2],
+    [0, 1, 0, 1, 2, 0],
+    [0, 1, 0, 1, 2, 1],
+    [0, 1, 0, 1, 2, 2],
+    [0, 1, 0, 1, 2, 3],
+    [0, 1, 0, 2, 0, 1],
+    [0, 1, 0, 2, 0, 2],
+    [0, 1, 0, 2, 1, 0],
+    [0, 1, 0, 2, 1, 1],
+    [0, 1, 0, 2, 1, 2],
+    [0, 1, 0, 2, 1, 3],
+    [0, 1, 0, 2, 2, 1],
+    [0, 1, 0, 2, 3, 1],
+    [0, 1, 1, 0, 0, 1],
+    [0, 1, 1, 0, 1, 0],
+    [0, 1, 1, 0, 1, 1],
+    [0, 1, 1, 0, 1, 2],
+    [0, 1, 1, 0, 2, 1],
+    [0, 1, 1, 1, 0, 1],
+    [0, 1, 1, 2, 0, 1],
+    [0, 1, 1, 2, 0, 2],
+    [0, 1, 1, 2, 1, 2],
+    [0, 1, 2, 0, 0, 1],
+    [0, 1, 2, 0, 0, 2],
+    [0, 1, 2, 0, 1, 0],
+    [0, 1, 2, 0, 1, 1],
+    [0, 1, 2, 0, 1, 2],
+    [0, 1, 2, 0, 1, 3],
+    [0, 1, 2, 0, 2, 0],
+    [0, 1, 2, 0, 2, 1],
+    [0, 1, 2, 0, 2, 2],
+    [0, 1, 2, 0, 2, 3],
+    [0, 1, 2, 0, 3, 1],
+    [0, 1, 2, 0, 3, 2],
+    [0, 1, 2, 1, 0, 1],
+    [0, 1, 2, 1, 0, 2],
+    [0, 1, 2, 1, 1, 2],
+    [0, 1, 2, 1, 2, 0],
+    [0, 1, 2, 1, 2, 1],
+    [0, 1, 2, 1, 2, 2],
+    [0, 1, 2, 1, 2, 3],
+    [0, 1, 2, 1, 3, 2],
+    [0, 1, 2, 2, 0, 1],
+    [0, 1, 2, 2, 0, 2],
+    [0, 1, 2, 2, 1, 2],
+    [0, 1, 2, 3, 0, 1],
+    [0, 1, 2, 3, 0, 2],
+    [0, 1, 2, 3, 0, 3],
+    [0, 1, 2, 3, 1, 2],
+    [0, 1, 2, 3, 1, 3],
+    [0, 1, 2, 3, 2, 3]
+]:
+V := Matrix([
+    [2 - N, N - 1, -1, N^2 - 3*N + 2, 0],
+    [N^2 - 3*N + 2, -1, N - 1, 2 - N, 0],
+    [N^2 - 3*N + 2, -N^2 + 3*N - 1, -1, 2 - N, N^2 - 2*N],
+    [2*N - 2, 1 - N, 1, -2, N],
+    [1 - N, N - 2, 0, 1, 1 - N],
+    [1 - N, 1, -1, 1, -1],
+    [N - 2, 1, 1, N - 2, 0],
+    [2 - N, 0, -1, 0, 0],
+    [0, -1, 0, 2 - N, 0],
+    [0, 0, 0, 0, -1],
+    [N^2 - 3*N + 2, -N^2 + 3*N - 1, -1, 2 - N, N^2 - 2*N],
+    [2 - N, -1, N - 1, N^2 - 3*N + 2, 0],
+    [N - 2, 1 - N, 1, N - 2, N],
+    [0, 1, -1, 2 - N, -1],
+    [2 - N, N - 2, 0, 0, 1 - N],
+    [N^2 - 3*N + 2, N - 1, -1, 2 - N, 0],
+    [-N^2 + 3*N - 2, N^2 - 3*N + 1, 1, -N^2 + 3*N - 2, 0],
+    [0, 2 - N, 0, N - 2, 0],
+    [N - 2, 1, 1, N - 2, 0],
+    [2 - N, N - 1, -1, N^2 - 3*N + 2, 0],
+    [0, -1, 0, 2 - N, 0],
+    [2 - N, -1, 0, 0, 0],
+    [N - 2, 2 - N, 0, 0, 0],
+    [0, -1, 0, 0, 0],
+    [0, 1, 0, 0, 0],
+    [0, 0, 0, N - 2, 2 - N],
+    [N - 2, 2 - N, 0, 0, 0],
+    [0, 0, -1, 2 - N, 0],
+    [0, 0, 0, 2 - N, -1],
+    [0, 0, 1, -N^2 + 4*N - 4, 1],
+    [0, 0, 0, N - 2, 0],
+    [0, 0, 0, 0, -1],
+    [0, 0, 0, 0, 1],
+    [2*N - 2, 1 - N, 1, -2, N],
+    [N - 2, 1 - N, 1, N - 2, N],
+    [N^2 - 3*N + 2, -N^2 + 2*N - 1, N - 1, 2 - N, N^2 - 2*N],
+    [2 - N, N - 1, -1, 0, 1 - N],
+    [1 - N, N - 1, -1, 1, 1 - N],
+    [N^2 - 3*N + 2, N - 1, -1, 2 - N, 0],
+    [1 - N, 0, 0, 1, -1],
+    [0, -1, 0, 0, 0],
+    [0, 0, 0, 2 - N, -1],
+    [1 - N, N - 2, 0, 1, 1 - N],
+    [1 - N, 1, -1, 1, -1],
+    [0, 1, -1, 2 - N, -1],
+    [2 - N, N - 1, -1, 0, 1 - N],
+    [N - 2, 0, 2 - N, N - 2, 0],
+    [0, -1, 1, 0, 1],
+    [2 - N, N - 2, 0, 0, 1 - N],
+    [-N^2 + 4*N - 3, N^2 - 4*N + 3, 1, -1, -N^2 + 4*N - 2],
+    [1 - N, N - 1, -1, 1, 1 - N],
+    [N - 2, 2 - N, 0, 0, N - 2],
+    [N - 2, 2 - N, 0, 0, N - 2],
+    [1, -1, 1, -1, 1],
+    [0, 2 - N, 0, N - 2, 0],
+    [-N^2 + 4*N - 3, 0, 1, -1, 1],
+    [2 - N, 0, -1, 0, 0],
+    [-1, 0, 0, 1, -1],
+    [0, 0, 0, N - 2, 2 - N],
+    [1 - N, 0, 0, 1, -1],
+    [1, 0, 0, -1, 1],
+    [N - 2, 0, 0, 0, 0],
+    [-1, 0, 0, 1, -1],
+    [2 - N, -1, 0, 0, 0],
+    [0, 0, -1, 2 - N, 0],
+    [1, 0, 0, -1, 1],
+    [N - 2, 0, 0, 0, 0],
+    [0, 1, 0, 0, 0],
+    [0, 0, 1, 0, 0],
+    [0, 0, 0, N - 2, 0],
+    [0, 0, 0, 0, 1]
+]):
+
+# END GENERATED BASIS
+if CR6&lt;&gt;SavedWords then error &quot;Partition ordering mismatch&quot; end if:
+CheckMatrix(M66 . V,&quot;all 66 equations annihilate V&quot;):
+D0 := LinearAlgebra:-DiagonalMatrix([N-2,1,1,N-2,1]):
+CheckMatrix(V[67..71,1..5]-D0,&quot;five-coordinate normalization&quot;):
+<Font encoding="UTF-8">printf(&quot;Read coordinates: alpha[67]=(N-2)t1, alpha[68]=t2,\134n&quot;):
+printf(&quot;alpha[69]=t3, alpha[70]=(N-2)t4, alpha[71]=t5.\134n&quot;):
+</Font>
+</Text-field>
+</Input>
+<Output><Text-field style="Line Printed Output" layout="Line Printed Output">PASS: all 66 equations annihilate V
+PASS: five-coordinate normalization
+Read coordinates: alpha[67]=(N-2)t1, alpha[68]=t2,
+alpha[69]=t3, alpha[70]=(N-2)t4, alpha[71]=t5.
+</Text-field>
+</Output>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L11" drawlabel="true">
+<Input><Text-field style="Heading1" opaque="false" subscript="false" underline="false" superscript="false" bold="false" foreground="[0,0,0]" italic="false" executable="false" selection-placeholder="false" size="12" readonly="false" background="[255,255,255]" strikethrough="false" placeholder="false" family="Times New Roman" font_style_name="Heading1" layout="Normal">3b. The manuscript's chosen 66-column determinant, exact over Q[N].</Text-field>
+</Input>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L12" drawlabel="true">
+<Input><Text-field style="Maple Input" layout="Normal"># 3b. The manuscript's chosen 66-column determinant, exact over Q[N].
+# A quick run can set RUN_UNIFORM_RANK_CHECK=false at the top; a full run must
+# execute the determinant below and compare to the paper's exact expression.
+ExpectedDet66 := (N-4)^12*(N-2)*(N^2-3*N+1)^23:
+if RUN_UNIFORM_RANK_CHECK then
+<Font encoding="UTF-8">    printf(&quot;Computing and comparing the 66 x 66 determinant (can be expensive)...\134n&quot;);
+</Font>    det66 := LinearAlgebra:-Determinant(M66[1..66,1..66],method=fracfree):
+    detSign66 := normal(det66/ExpectedDet66):
+    if not evalb(detSign66=1 or detSign66=-1) then
+        error &quot;The chosen determinant does not match equation (16) up to sign&quot;;
+    end if;
+<Font encoding="UTF-8">    printf(&quot;PASS equation (16): determinant ratio = %a\134n&quot;,detSign66);
+</Font>else
+<Font encoding="UTF-8">    printf(&quot;SKIPPED: exact 66-column determinant. This is a QUICK run only.\134n&quot;);
+</Font>end if:
+# The explicit factorisation has no zeros at any integer N&gt;=6.
+# That conclusion is made in the paper, not inferred from a finite N sweep.
+# A separate finite-rank observation in the manuscript concerns N=4.
+if RUN_N4_CHECK then
+    mAt4 := map(x -&gt; subs(N=4,x),M66):
+    if LinearAlgebra:-Rank(mAt4) &lt;&gt; 54 then error &quot;Rank at N=4 is not 54&quot; end if;
+<Font encoding="UTF-8">    printf(&quot;PASS: rank M(4)=54\134n&quot;);
+</Font>end if:
+
+</Text-field>
+</Input>
+<Output><Text-field style="Line Printed Output" layout="Line Printed Output">Computing and comparing the 66 x 66 determinant (can be expensive)...
+PASS equation (16): determinant ratio = 1
+PASS: rank M(4)=54
+</Text-field>
+</Output>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L13" drawlabel="true">
+<Input><Text-field style="Heading1" opaque="false" subscript="false" underline="false" superscript="false" bold="false" foreground="[0,0,0]" italic="false" executable="false" selection-placeholder="false" size="12" readonly="false" background="[255,255,255]" strikethrough="false" placeholder="false" family="Times New Roman" font_style_name="Heading1" layout="Normal">4. Rotation in the PREPRINT convention: last factor moves to the first.</Text-field>
+</Input>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L14" drawlabel="true">
+<Input><Text-field style="Maple Input" layout="Normal"># 4. Rotation in the PREPRINT convention: last factor moves to the first.
+R := Matrix([[0,0,0,1,0],[0,0,0,0,1],[0,-1,1,0,1],
+             [1,-1,0,0,1],[1,0,0,-1,1]]):
+Id5 := LinearAlgebra:-IdentityMatrix(5):
+CheckMatrix(R . R . R-Id5,&quot;R^3=I&quot;):
+RotV := Matrix(71,5):
+for ii to 71 do
+    rw := Canon([CR6[ii][6],op(CR6[ii][1..5])]);
+    rr := 0;
+    for jj to 71 do if CR6[jj]=rw then rr:=jj; break; end if; end do;
+    if rr=0 then error &quot;Rotated word not found&quot; end if;
+    for jj to 5 do RotV[rr,jj] := V[ii,jj] end do;
+end do:
+CheckMatrix(RotV-V . R,&quot;actual rotation agrees with coordinate R&quot;):
+Pavg := (Id5+R+R . R)/3:
+C := Id5-Pavg:
+CheckMatrix(Pavg . Pavg-Pavg,&quot;P is idempotent on the kernel&quot;):
+
+</Text-field>
+</Input>
+<Output><Text-field style="Line Printed Output" layout="Line Printed Output">PASS: R^3=I
+PASS: actual rotation agrees with coordinate R
+PASS: P is idempotent on the kernel
+</Text-field>
+</Output>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L15" drawlabel="true">
+<Input><Text-field style="Heading1" opaque="false" subscript="false" underline="false" superscript="false" bold="false" foreground="[0,0,0]" italic="false" executable="false" selection-placeholder="false" size="12" readonly="false" background="[255,255,255]" strikethrough="false" placeholder="false" family="Times New Roman" font_style_name="Heading1" layout="Normal">4b. Independently check the reflection action on the kernel.</Text-field>
+</Input>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L16" drawlabel="true">
+<Input><Text-field style="Maple Input" layout="Normal"># 4b. Independently check the reflection action on the kernel.
+# Each V column has real polynomial entries. Reflection reverses tensor order,
+# followed by complex conjugation of coefficients; conjugation fixes these entries.
+ReflectV := Matrix(71,5):
+for ii to 71 do
+    rw := Canon([seq(CR6[ii][7-jj],jj=1..6)]):
+    rr := 0:
+    for jj to 71 do if CR6[jj]=rw then rr:=jj; break; end if; end do:
+    if rr=0 then error &quot;Reflected crossing word missing&quot; end if:
+    for jj to 5 do ReflectV[rr,jj] := V[ii,jj] end do:
+end do:
+CheckMatrix(M66 . ReflectV,&quot;reflected basis vectors lie in ker M&quot;):
+
+</Text-field>
+</Input>
+<Output><Text-field style="Line Printed Output" layout="Line Printed Output">PASS: reflected basis vectors lie in ker M
+</Text-field>
+</Output>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L17" drawlabel="true">
+<Input><Text-field style="Heading1" opaque="false" subscript="false" underline="false" superscript="false" bold="false" foreground="[0,0,0]" italic="false" executable="false" selection-placeholder="false" size="12" readonly="false" background="[255,255,255]" strikethrough="false" placeholder="false" family="Times New Roman" font_style_name="Heading1" layout="Normal">5. Construct the contraction matrix from the actual partition p.</Text-field>
+</Input>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L18" drawlabel="true">
+<Input><Text-field style="Maple Input" layout="Normal"># 5. Construct the contraction matrix from the actual partition p.
+# Upper pairs: (3,10),(4,9),(5,8),(6,7); pass positions 1,2,11,12.
+# It acts on xi tensor conjugate-reversal(xi).
+# F(xi)[a,b,c,d] = sum xi[a,b,i,j,k,l] conjugate(xi[d,c,i,j,k,l]).
+# On a pair of six-point partition words, the glued equality labels are
+# p -&gt; [1,2,3,4,5,6], q -&gt; [8,7,3,4,5,6]; outputs [1,2,7,8].
+# Count the connected components that miss the outputs; each contributes N.
+ContractCrossing := proc(w::list,v::list)
+    local parent,slots,words,which,aa,bb,out,roots,jj;
+    parent := Array(1..8,[seq(jj,jj=1..8)]);
+    slots := [[1,2,3,4,5,6],[8,7,3,4,5,6]];
+    words := [w,v];
+    for which to 2 do for aa to 6 do for bb to aa-1 do
+        if words[which][aa]=words[which][bb] then
+            Join(parent,slots[which][aa],slots[which][bb]);
+        end if;
+    end do; end do; end do;
+    out := [seq(Root(parent,jj),jj in [1,2,7,8])];
+    if Canon(out)&lt;&gt;[0,1,0,1] then return 0 end if;
+    roots := {seq(Root(parent,jj),jj=1..8)};
+    N^nops(roots minus {op(out)})
+end proc:
+G := Matrix(71,71):
+for ii to 71 do for jj to 71 do
+    G[ii,jj] := ContractCrossing(CR6[ii],CR6[jj]);
+end do; end do:
+B := map(factor,LinearAlgebra:-Transpose(V) . G . V):
+CheckMatrix(B-LinearAlgebra:-Transpose(B),&quot;B is real symmetric&quot;):
+<Font encoding="UTF-8">printf(&quot;Computed B = transpose(V) G V:\134n&quot;):
+</Font>print(B);
+
+</Text-field>
+</Input>
+<Output><Text-field style="Line Printed Output" layout="Line Printed Output">PASS: B is real symmetric
+Computed B = transpose(V) G V:
+</Text-field>
+</Output>
+<Output><Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkqbWNvbXBsZXRlRzYjL0krbW9kdWxlbmFtZUc2IkksVHlwZXNldHRpbmdHSShfc3lzbGliR0YnNiQtSSVtcm93R0YkNiYtSShtZmVuY2VkR0YkNigtRiw2Ji1JLW1zY3JvbGx0YWJsZUdGJDZTLUkqbXNjcm9sbHRyR0YkNiwtSSptc2Nyb2xsdGRHRiQ2Ki1GLDYtLUkjbW9HRiQ2LlEqJnVtaW51czA7RicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYnLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0ZHLyUpc3RyZXRjaHlHRkcvJSpzeW1tZXRyaWNHRkcvJShsYXJnZW9wR0ZHLyUubW92YWJsZWxpbWl0c0dGRy8lJ2FjY2VudEdGRy8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRlYvJSllcXVhbGl0eUdGRy1GLDYmLUkjbW5HRiQ2JFEiMkYnRkItRj82LlExJkludmlzaWJsZVRpbWVzO0YnRkJGRUZIRkpGTEZORlBGUi9GVVEmMC4wZW1GJy9GWEZfb0ZZLUklbXN1cEdGJDYlLUkjbWlHRiQ2JVEiTkYnLyUnaXRhbGljR1EldHJ1ZUYnL0ZDUSdpdGFsaWNGJy1GaG42JFEiNEYnRkIvJTFzdXBlcnNjcmlwdHNoaWZ0R1EiMEYnRkItRj82LlEnJnBsdXM7RidGQkZFRkhGSkZMRk5GUEZSRlRGV0ZZLUYsNiYtRmhuNiRRIzE4RidGQkZbby1GYm82JUZkby1GaG42JFEiM0YnRkJGYHBGQi1GPzYuUSgmbWludXM7RidGQkZFRkhGSkZMRk5GUEZSRlRGV0ZZLUYsNiYtRmhuNiRRIzU4RidGQkZbby1GYm82JUZkb0ZnbkZgcEZCRmNwLUYsNiYtRmhuNiRRIzc4RidGQkZbb0Zkb0ZCRmBxLUZobjYkUSMzMkYnRkJGQi8lK2ZvcmVncm91bmRHUShbMCwwLDBdRicvJSlyZWFkb25seUdGRy8lKXJvd2FsaWduR1EhRicvJSxjb2x1bW5hbGlnbkdGaXIvJStncm91cGFsaWduR0Zpci8lKHJvd3NwYW5HUSIxRicvJStjb2x1bW5zcGFuR0Zgcy1GOjYqLUYsNiZGZG9GW28tRi82JC1GLDYnRj5GXXFGY3BGZG9GQkZCRkJGYnJGZXJGZ3JGanJGXHNGXnNGYXMtRjo2Ki1GLDYsRmFvRmBxLUYsNiYtRmhuNiRRIjlGJ0ZCRltvRltxRkJGY3AtRiw2Ji1GaG42JFEjMjhGJ0ZCRltvRmhxRkJGYHEtRiw2Ji1GaG42JFEjMzVGJ0ZCRltvRmRvRkJGY3AtRmhuNiRRIzE2RidGQkZCRmJyRmVyRmdyRmpyRlxzRl5zRmFzLUY6NiotRiw2JUY+LUYsNihGZG9GW29GZ3NGW28tRi82JC1GLDYoRmhxRmBxLUYsNiZGXXBGW29GZG9GQkZjcEZnbkZCRkJGQkZCRmJyRmVyRmdyRmpyRlxzRl5zRmFzLUY6NiotRiw2Ji1GLzYkLUYsNiZGZG9GYHFGXXBGQkZCRltvLUYvNiQtRiw2KEZocUZgcS1GLDYmLUZobjYkUSI1RidGQkZbb0Zkb0ZCRmNwRl1xRkJGQkZCRmJyRmVyRmdyRmpyRlxzRl5zRmFzRmJyRmVyRmdyRmpyRlxzLUY3NixGY3MtRjo2Ki1GLDYnRj4tRiw2JkZnbkZbb0Zkb0ZCRmNwLUZobjYkUSI2RidGQkZCRmJyRmVyRmdyRmpyRlxzRl5zRmFzLUY6NiotRiw2JkZnbkZgcUZkb0ZCRmJyRmVyRmdyRmpyRlxzRl5zRmFzLUY6NiotRiw2JkZnc0Zbby1GLzYkLUYsNigtRiw2JkZnbkZbb0ZocUZCRmBxLUYsNiZGYXRGW29GZG9GQkZjcC1GaG42JFEiOEYnRkJGQkZCRkJGYnJGZXJGZ3JGanJGXHNGXnNGYXMtRjo2Ki1GLDYlRj4tRiw2JkZhdkZbby1GLzYkLUYsNihGaHFGYHFGaXZGY3BGW3dGQkZCRkJGQkZickZlckZnckZqckZcc0Zec0Zhc0ZickZlckZnckZqckZccy1GNzYsRlt0Rml3LUY6NiotRiw2KUY+RmV4RmNwLUYsNiYtRmhuNiRRIzEwRidGQkZbb0Zkb0ZCRmBxRl56RkJGYnJGZXJGZ3JGanJGXHNGXnNGYXMtRjo2KkZjeEZickZlckZnckZqckZcc0Zec0Zhcy1GOjYqLUYsNiVGPi1GLDYmRmF2RltvRmRvRkJGQkZickZlckZnckZqckZcc0Zec0Zhc0ZickZlckZnckZqckZccy1GNzYsRmF1Rl14RmF6LUY6NiotRiw2JUY+LUYsNihGZ25GW29GZG9GW29GZ3NGQkZCRmJyRmVyRmdyRmpyRlxzRl5zRmFzLUY6NiotRiw2JUY+LUYsNiZGYXZGW28tRi82JC1GLDYoRmhxRmBxLUYsNiZGXXFGW29GZG9GQkZgcS1GaG42JEZgc0ZCRkJGQkZCRkJGYnJGZXJGZ3JGanJGXHNGXnNGYXNGYnJGZXJGZ3JGanJGXHMtRjc2LEZddkZceUZjekZhW2wtRjo2Ki1GLDYoRmduRltvRmF2RltvLUYvNiQtRiw2KEZocUZgcUZbdkZjcEZdXGxGQkZCRkJGYnJGZXJGZ3JGanJGXHNGXnNGYXNGYnJGZXJGZ3JGanJGXHMvJSZhbGlnbkdRJWF4aXNGJy9GaHJRJ2NlbnRlckYnL0Zbc0ZdXWwvRl1zUSd8ZnJsZWZ0fGhyRicvJS9hbGlnbm1lbnRzY29wZUdGam8vJSxjb2x1bW53aWR0aEdRJWF1dG9GJy8lJndpZHRoR0ZlXWwvJStyb3dzcGFjaW5nR1EmMS4wZXhGJy8lLmNvbHVtbnNwYWNpbmdHUSYwLjhlbUYnLyUpcm93bGluZXNHUSVub25lRicvJSxjb2x1bW5saW5lc0dGYF5sLyUmZnJhbWVHRmBebC8lLWZyYW1lc3BhY2luZ0dRLDAuNGVtfjAuNWV4RicvJSplcXVhbHJvd3NHRkcvJS1lcXVhbGNvbHVtbnNHRkcvJS1kaXNwbGF5c3R5bGVHRkcvJSVzaWRlR1EmcmlnaHRGJy8lMG1pbmxhYmVsc3BhY2luZ0dGXV5sLyUxc2hvd2NvbHVtbmhlYWRlckdGRy8lLnNob3dyb3doZWFkZXJHRkcvJS5mcm96ZW5kaXNwbGF5R0ZHLyUubnVtYmVyY29sdW1uc0dGXXcvJStudW1iZXJyb3dzR0Zddy8lNmRlZmF1bHR2aXNpYmxlY29sdW1uc0dGXXcvJTNkZWZhdWx0dmlzaWJsZXJvd3NHRl13LyUxY29sdW1ubG93ZXJib3VuZEdGYHMvJTFjb2x1bW51cHBlcmJvdW5kR0Zddy8lLnJvd2xvd2VyYm91bmRHRmBzLyUucm93dXBwZXJib3VuZEdGXXcvJS1kaXNwbGF5d2lkdGhHUSQ3MjVGJy8lLmRpc3BsYXloZWlnaHRHUSQxMzVGJy8lMHVzZXJkZWZpbmVkc2l6ZUdGRy8lOmRpc3BsYXlob3Jpem9udGFscG9zaXRpb25HRmJwLyU4ZGlzcGxheXZlcnRpY2FscG9zaXRpb25HRmJwLyU0ZGlzcGxheWNvbHVtbndpZHRoc0dROlsyMzgsfjE4NCx+MjA1LH4yMDIsfjE3M11GJy8lNWRpc3BsYXljb2x1bW5zcGFjaW5nR1ExWzExLH4xMSx+MTEsfjExXUYnLyU4dXNlcmRlZmluZWRjb2x1bW53aWR0aHNHUURbZmFsc2UsfmZhbHNlLH5mYWxzZSx+ZmFsc2UsfmZhbHNlXUYnLyUyZGlzcGxheXJvd2hlaWdodHNHUTVbMTksfjE5LH4xOSx+MTksfjE5XUYnLyUyZGlzcGxheXJvd3NwYWNpbmdHUS1bOCx+OCx+OCx+OF1GJy8lNnVzZXJkZWZpbmVkcm93aGVpZ2h0c0dGXWJsLyUqdGFibGV0eXBlR0ZicC8lMnJvd2luZGV4aW5nb2Zmc2V0R0ZicC8lNWNvbHVtbmluZGV4aW5nb2Zmc2V0R0ZicC8lMmFycmF5c2xpY2VpbmRpY2VzR1EjW11GJ0ZickZlckZCRkIvSSttc2VtYW50aWNzR0YkUSdNYXRyaXhGJy8lJW9wZW5HUScmbHNxYjtGJy8lJmNsb3NlR1EnJnJzcWI7RidGX2NsRmJyRmVyRkItRi82KC1GLDYmLUknbXRhYmxlR0YkNjstSSRtdHJHRiQ2LC1JJG10ZEdGJDYqLUYsNi8tRj82MEZBRmJyRmVyRkJGRUZIRkpGTEZORlBGUkZURldGWS1GLDYoLUZobjYmRmpuRmJyRmVyRkJGW28tRmJvNiUtRmVvNidGZ29GaG9GYnJGZXJGW3AtRmhuNiZGX3BGYnJGZXJGQkZgcEZickZlckZCLUY/NjBRIitGJ0ZickZlckZCRkVGSEZKRkxGTkZQRlJGVEZXRlktRiw2KC1GaG42JkZqcEZickZlckZCRltvLUZibzYlRl9lbC1GaG42JkZfcUZickZlckZCRmBwRmJyRmVyRkItRj82MEZicUZickZlckZCRkVGSEZKRkxGTkZQRlJGVEZXRlktRiw2KC1GaG42JkZncUZickZlckZCRltvLUZibzYlRl9lbEZbZWxGYHBGYnJGZXJGQkZjZWwtRiw2KC1GaG42JkZeckZickZlckZCRltvRl9lbEZickZlckZCRl5mbC1GaG42JkZhckZickZlckZCRmJyRmVyRkJGYnJGZXJGZ3JGanJGXHNGXnNGYXMtRmNkbDYqLUYsNihGX2VsRltvLUYvNiYtRiw2KUZnZGxGXGZsRmNlbEZfZWxGYnJGZXJGQkZickZlckZCRmJyRmVyRkJGYnJGZXJGZ3JGanJGXHNGXnNGYXMtRmNkbDYqLUYsNi4tRiw2JkZdZWxGYnJGZXJGQkZeZmwtRiw2KC1GaG42JkZjdEZickZlckZCRltvRmplbEZickZlckZCRmNlbC1GLDYoLUZobjYmRmh0RmJyRmVyRkJGW29GZGZsRmJyRmVyRkJGXmZsLUYsNigtRmhuNiZGXXVGYnJGZXJGQkZbb0ZfZWxGYnJGZXJGQkZjZWwtRmhuNiZGYHVGYnJGZXJGQkZickZlckZCRmJyRmVyRmdyRmpyRlxzRl5zRmFzLUZjZGw2Ki1GLDYnRmdkbC1GLDYqRl9lbEZbb0ZgZ2xGW28tRi82Ji1GLDYqLUYsNiZGZGZsRmJyRmVyRkJGXmZsLUYsNihGYWVsRltvRl9lbEZickZlckZCRmNlbEZbZWxGYnJGZXJGQkZickZlckZCRmJyRmVyRkJGYnJGZXJGQkZickZlckZnckZqckZcc0Zec0Zhcy1GY2RsNiotRiw2KC1GLzYmLUYsNihGX2VsRl5mbEZhZWxGYnJGZXJGQkZickZlckZCRltvLUYvNiYtRiw2KkZiaWxGXmZsLUYsNigtRmhuNiZGXXdGYnJGZXJGQkZbb0ZfZWxGYnJGZXJGQkZjZWxGXGZsRmJyRmVyRkJGYnJGZXJGQkZickZlckZCRmJyRmVyRmdyRmpyRlxzRl5zRmFzRmJyRmVyRmdyRmpyRlxzLUZgZGw2LEZcZ2wtRmNkbDYqLUYsNilGZ2RsLUYsNihGW2VsRltvRl9lbEZickZlckZCRmNlbC1GaG42JkZod0ZickZlckZCRmJyRmVyRkJGYnJGZXJGZ3JGanJGXHNGXnNGYXMtRmNkbDYqLUYsNihGW2VsRl5mbEZfZWxGYnJGZXJGQkZickZlckZnckZqckZcc0Zec0Zhcy1GY2RsNiotRiw2KEZgZ2xGW28tRi82Ji1GLDYqLUYsNihGW2VsRltvRmRmbEZickZlckZCRl5mbC1GLDYoRlxobEZbb0ZfZWxGYnJGZXJGQkZjZWwtRmhuNiZGW3lGYnJGZXJGQkZickZlckZCRmJyRmVyRkJGYnJGZXJGQkZickZlckZnckZqckZcc0Zec0Zhcy1GY2RsNiotRiw2J0ZnZGwtRiw2KEZqaWxGW28tRi82Ji1GLDYqRmJpbEZeZmxGYmpsRmNlbEZkamxGYnJGZXJGQkZickZlckZCRmJyRmVyRkJGYnJGZXJGQkZickZlckZnckZqckZcc0Zec0Zhc0ZickZlckZnckZqckZccy1GYGRsNixGZGdsRmBbbS1GY2RsNiotRiw2K0ZnZGxGXFxtRmNlbC1GLDYoLUZobjYmRmB6RmJyRmVyRkJGW29GX2VsRmJyRmVyRkJGXmZsRmRdbUZickZlckZCRmJyRmVyRmdyRmpyRlxzRl5zRmFzLUZjZGw2KkZqW21GYnJGZXJGZ3JGanJGXHNGXnNGYXMtRmNkbDYqLUYsNidGZ2RsLUYsNihGamlsRltvRl9lbEZickZlckZCRmJyRmVyRkJGYnJGZXJGZ3JGanJGXHNGXnNGYXNGYnJGZXJGZ3JGanJGXHMtRmBkbDYsRmhobEZkW21GZl1tLUZjZGw2Ki1GLDYnRmdkbC1GLDYqRltlbEZbb0ZfZWxGW29GYGdsRmJyRmVyRkJGYnJGZXJGQkZickZlckZnckZqckZcc0Zec0Zhcy1GY2RsNiotRiw2J0ZnZGwtRiw2KEZqaWxGW28tRi82Ji1GLDYqRmJpbEZeZmwtRiw2KEZcZmxGW29GX2VsRmJyRmVyRkJGXmZsLUZobjYmRmBzRmJyRmVyRkJGYnJGZXJGQkZickZlckZCRmJyRmVyRkJGYnJGZXJGQkZickZlckZnckZqckZcc0Zec0Zhc0ZickZlckZnckZqckZccy1GYGRsNixGZmlsRmJcbUZoXW1GZl5tLUZjZGw2Ki1GLDYqRltlbEZbb0ZqaWxGW28tRi82Ji1GLDYqRmJpbEZeZmxGZGlsRmNlbEZiX21GYnJGZXJGQkZickZlckZCRmJyRmVyRkJGYnJGZXJGZ3JGanJGXHNGXnNGYXNGYnJGZXJGZ3JGanJGXHNGYnJGZXJGaVxsL0ZoclEpYmFzZWxpbmVGJ0ZeXWxGX11sRmFdbEZjXWxGZl1sRmhdbEZbXmxGXl5sRmFebEZjXmxGZV5sRmhebEZqXmxGXF9sRl5fbEZhX2xGYnJGZXJGQkZickZlckZCL0ZjY2xRIltGJy9GZmNsUSJdRic=">LV9JLFR5cGVzZXR0aW5nRzYkJSpwcm90ZWN0ZWRHSShfc3lzbGliRzYiSSxtcHJpbnRzbGFzaEdGKDYkNyNYLCUhR0YoRihbZ2whIiUhISEjOiImIiYtSSVtcm93RzYkRiYvSSttb2R1bGVuYW1lR0YoRiQ2LC1JI21vR0YwNiNRKiZ1bWludXMwO0YoLUYvNiUtSSNtbkdGMDYjUSIyRigtRjU2I1ExJkludmlzaWJsZVRpbWVzO0YoLUklbXN1cEdGMDYkLUkjbWlHRjA2I1EiTkYoLUY7NiNRIjRGKC1GNTYjUScmcGx1cztGKC1GLzYlLUY7NiNRIzE4RihGPi1GQjYkRkQtRjs2I1EiM0YoLUY1NiNRKCZtaW51cztGKC1GLzYlLUY7NiNRIzU4RihGPi1GQjYkRkRGOkZLLUYvNiUtRjs2I1EjNzhGKEY+RkRGWC1GOzYjUSMzMkYoLUYvNiVGREY+LUkobWZlbmNlZEdGMDYjLUYvNiZGNEZVRktGRC1GLzYrRkFGWC1GLzYlLUY7NiNRIjlGKEY+RlNGSy1GLzYlLUY7NiNRIzI4RihGPkZqbkZYLUYvNiUtRjs2I1EjMzVGKEY+RkRGSy1GOzYjUSMxNkYoLUYvNiRGNC1GLzYnRkRGPkZmb0Y+LUZnbzYjLUYvNidGam5GWC1GLzYlRkhGPkZERktGOi1GLzYlLUZnbzYjLUYvNiVGREZYRkhGPi1GZ282Iy1GLzYnRmpuRlgtRi82JS1GOzYjUSI1RihGPkZERktGVUZkby1GLzYmRjQtRi82JUY6Rj5GREZLLUY7NiNRIjZGKC1GLzYlRjpGWEZELUYvNiVGZm9GPi1GZ282Iy1GLzYnLUYvNiVGOkY+RmpuRlgtRi82JUZfcEY+RkRGSy1GOzYjUSI4RigtRi82JEY0LUYvNiVGW3JGPi1GZ282Iy1GLzYnRmpuRlhGY3JGS0ZlckZbcEZfcy1GLzYoRjRGZ3NGSy1GLzYlLUY7NiNRIzEwRihGPkZERlhGanRGZXMtRi82JEY0LUYvNiVGW3JGPkZERl9xRmFzRmVzLUYvNiRGNC1GLzYnRjpGPkZERj5GZm8tRi82JEY0LUYvNiVGW3JGPi1GZ282Iy1GLzYnRmpuRlgtRi82JUZVRj5GREZYLUY7NiNRIjFGKEZpcUZedEZddUZldS1GLzYnRjpGPkZbckY+LUZnbzYjLUYvNidGam5GWEZncUZLRl92NyMtSSdNYXRyaXhHRiU2Iy9JJCVpZEdGKCI1dyVRaTZqLlwkKm8k</Equation></Text-field>
+</Output>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L19" drawlabel="true">
+<Input><Text-field style="Heading1" opaque="false" subscript="false" underline="false" superscript="false" bold="false" foreground="[0,0,0]" italic="false" executable="false" selection-placeholder="false" size="12" readonly="false" background="[255,255,255]" strikethrough="false" placeholder="false" family="Times New Roman" font_style_name="Heading1" layout="Normal">6. Derive, rather than insert, the two coefficients.</Text-field>
+</Input>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L20" drawlabel="true">
+<Input><Text-field style="Maple Input" layout="Normal"># 6. Derive, rather than insert, the two coefficients.
+# t is arbitrary, xi has coefficient vector V C t, z1=t1-t4, z2=t2-t5.
+# Qc represents q(Ct). Its first two rows/columns determine H if
+# Qc = transpose(DzMap) H DzMap; check the WHOLE identity.
+# Maple reserves D for differential operators; do not assign to or unprotect D.
+DzMap := Matrix([[1,0,0,-1,0],[0,1,0,0,-1]]):
+CheckMatrix(DzMap . Pavg,&quot;DzMap P = 0, so z1,z2 are unchanged by I-P&quot;):
+Qc := map(factor,LinearAlgebra:-Transpose(C) . B . C):
+H := Qc[1..2,1..2]:
+CheckMatrix(Qc-LinearAlgebra:-Transpose(DzMap) . H . DzMap,
+            &quot;q(Ct) depends only on z1,z2 through H&quot;):
+CheckZero(H[1,1]-H[2,2],&quot;equal diagonal entries of H&quot;):
+CheckZero(H[1,2]-H[2,1],&quot;symmetric off-diagonal entries of H&quot;):
+dN := factor(H[1,1]):
+eN := factor(H[1,2]):
+AN := factor((dN+eN)/2):
+BN := factor((dN-eN)/2):
+<Font encoding="UTF-8">printf(&quot;DERIVED d_N, e_N, A_N, B_N (in this order):\134n&quot;):
+</Font>print(dN,eN,AN,BN);
+
+# Only now compare the derived answers with the manuscript's proposed formulas.
+CheckZero(AN-(N-4)*(2*N^2-9*N+8)/18,&quot;A_N formula&quot;):
+CheckZero(BN-(N-4)*(2*N^2-7*N+4)/2,&quot;B_N formula&quot;):
+<Font encoding="UTF-8">printf(&quot;PASS: both displayed formulas follow from the contraction.\134n&quot;):
+</Font>
+# z1bar,z2bar are independent formal symbols standing for complex conjugates.
+# This avoids assumptions about conjugate(N) and checks a polynomial identity.
+q_z := expand(dN*(z1*z1bar+z2*z2bar)+eN*(z1bar*z2+z2bar*z1)):
+target_z := AN*(z1+z2)*(z1bar+z2bar)+BN*(z1-z2)*(z1bar-z2bar):
+CheckZero(q_z-target_z,&quot;complex Hermitian sum-of-squares identity&quot;):
+<Font encoding="UTF-8">printf(&quot;PASS: q(Ct)=A_N |z1+z2|^2+B_N |z1-z2|^2 for COMPLEX t.\134n&quot;):
+</Font>
+</Text-field>
+</Input>
+<Output><Text-field style="Line Printed Output" layout="Line Printed Output">PASS: DzMap P = 0, so z1,z2 are unchanged by I-P
+PASS: q(Ct) depends only on z1,z2 through H
+DERIVED d_N, e_N, A_N, B_N (in this order):
+</Text-field>
+</Output>
+<Output><Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYqLUkmbWZyYWNHRiQ2KC1GIzYoLUkjbW5HRiQ2JFEiMkYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy1JI21vR0YkNi5RMSZJbnZpc2libGVUaW1lcztGJ0Y0LyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0Y9LyUpc3RyZXRjaHlHRj0vJSpzeW1tZXRyaWNHRj0vJShsYXJnZW9wR0Y9LyUubW92YWJsZWxpbWl0c0dGPS8lJ2FjY2VudEdGPS8lJ2xzcGFjZUdRJjAuMGVtRicvJSdyc3BhY2VHRkwvJSllcXVhbGl0eUdGPS1JKG1mZW5jZWRHRiQ2JC1GIzYmLUkjbWlHRiQ2JVEiTkYnLyUnaXRhbGljR1EldHJ1ZUYnL0Y1USdpdGFsaWNGJy1GODYuUSgmbWludXM7RidGNEY7Rj5GQEZCRkRGRkZIL0ZLUSwwLjIyMjIyMjJlbUYnL0ZORl1vRk8tRjE2JFEiNEYnRjRGNEY0RjctRlI2JC1GIzYoLUYjNiYtRjE2JFEiNUYnRjRGNy1JJW1zdXBHRiQ2JUZWRjAvJTFzdXBlcnNjcmlwdHNoaWZ0R1EiMEYnRjRGaW4tRiM2Ji1GMTYkUSMxOEYnRjRGN0ZWRjQtRjg2LlEnJnBsdXM7RidGNEY7Rj5GQEZCRkRGRkZIRlxvRl5vRk8tRjE2JFEjMTFGJ0Y0RjRGNEY0LUYxNiRRIjlGJ0Y0LyUubGluZXRoaWNrbmVzc0dRIjFGJy8lK2Rlbm9tYWxpZ25HUSdjZW50ZXJGJy8lKW51bWFsaWduR0ZkcS8lKWJldmVsbGVkR0Y9LUY4Ni5RKCZjb21tYTtGJ0Y0RjsvRj9GZm5GQEZCRkRGRkZIRkovRk5RLDAuMzMzMzMzM2VtRidGTy1GIzYlLUY4Ni5RKiZ1bWludXMwO0YnRjRGO0Y+RkBGQkZERkZGSEZcb0Zeb0ZPLUYsNigtRiM2JkZRRjctRlI2JC1GIzYoLUYjNiYtRjE2JFEiOEYnRjRGN0ZbcEY0RmluLUYjNiYtRjE2JFEjMjdGJ0Y0RjdGVkY0RmZwLUYxNiRRIzE0RidGNEY0RjRGNEZccUZfcUZicUZlcUZncUY0RmlxLUYsNigtRiM2JkZRRjctRlI2JC1GIzYoLUYjNiZGMEY3RltwRjRGaW4tRiM2JkZccUY3RlZGNEZmcEZec0Y0RjRGNEZjcEZfcUZicUZlcUZncUZpcS1GLDYoLUYjNiZGUUY3LUZSNiQtRiM2KEZhdEZpbi1GIzYmLUYxNiRRIjdGJ0Y0RjdGVkY0RmZwRl9vRjRGNEY0RjBGX3FGYnFGZXFGZ3FGNA==">NiYsJComLCZJIk5HNiIiIiIhIiVGKEYoLCgqJEYmIiIjIiImRiYhIz0iIzZGKEYoI0YsIiIqLCQqJkYlRigsKEYrIiIpRiYhI0YiIzlGKEYoIyEiIkYxLCQqJkYlRigsKEYrRixGJiEiKkY1RihGKCNGKCIjPSwkKiZGJUYoLChGK0YsRiYhIigiIiVGKEYoI0YoRiw=</Equation></Text-field>
+</Output>
+<Output><Text-field style="Line Printed Output" layout="Line Printed Output">PASS: both displayed formulas follow from the contraction.
+PASS: q(Ct)=A_N |z1+z2|^2+B_N |z1-z2|^2 for COMPLEX t.
+</Text-field>
+</Output>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L21" drawlabel="true">
+<Input><Text-field style="Heading1" opaque="false" subscript="false" underline="false" superscript="false" bold="false" foreground="[0,0,0]" italic="false" executable="false" selection-placeholder="false" size="12" readonly="false" background="[255,255,255]" strikethrough="false" placeholder="false" family="Times New Roman" font_style_name="Heading1" layout="Normal">7. Positivity for ALL N&gt;=6: prove it from the quadratic factors.</Text-field>
+</Input>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L22" drawlabel="true">
+<Input><Text-field style="Maple Input" layout="Normal"># 7. Positivity for ALL N&gt;=6: prove it from the quadratic factors.
+uA := expand(subs(N=6+s,2*N^2-9*N+8)):
+uB := expand(subs(N=6+s,2*N^2-7*N+4)):
+CheckZero(uA-(26+15*s+2*s^2),&quot;shifted A factor&quot;):
+CheckZero(uB-(34+17*s+2*s^2),&quot;shifted B factor&quot;):
+for jj from 0 to 2 do
+    if not evalb(coeff(uA,s,jj)&gt;0) then error &quot;A positivity failed&quot; end if;
+    if not evalb(coeff(uB,s,jj)&gt;0) then error &quot;B positivity failed&quot; end if;
+end do:
+<Font encoding="UTF-8">printf(&quot;PASS: A_N,B_N&gt;0 for every real N&gt;=6.\134n&quot;):
+printf(&quot;At N=6, expected A_N=26/9, B_N=34; calculated values:\134n&quot;):
+</Font>print(subs(N=6,AN),subs(N=6,BN));
+
+# An additional check in an explicit basis of ker P.
+UV := Matrix([[0,1],[-1,1],[-1,1],[-1,0],[0,-1]]):
+CheckMatrix(Pavg . UV,&quot;the displayed u,v lie in ker P&quot;):
+J := map(factor,LinearAlgebra:-Transpose(UV) . B . UV):
+CheckMatrix(J-Matrix([[4*BN,-2*BN],[-2*BN,9*AN+BN]]),
+            &quot;q(lambda*u+mu*v)=9*A_N*|mu|^2+B_N*|2*lambda-mu|^2&quot;):
+
+</Text-field>
+</Input>
+<Output><Text-field style="Line Printed Output" layout="Line Printed Output">PASS: A_N,B_N&gt;0 for every real N&gt;=6.
+At N=6, expected A_N=26/9, B_N=34; calculated values:
+</Text-field>
+</Output>
+<Output><Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUkmbWZyYWNHRiQ2KC1JI21uR0YkNiRRIzI2RicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYnLUYvNiRRIjlGJ0YyLyUubGluZXRoaWNrbmVzc0dRIjFGJy8lK2Rlbm9tYWxpZ25HUSdjZW50ZXJGJy8lKW51bWFsaWduR0Y9LyUpYmV2ZWxsZWRHUSZmYWxzZUYnLUkjbW9HRiQ2LlEoJmNvbW1hO0YnRjIvJSZmZW5jZUdGQi8lKnNlcGFyYXRvckdRJXRydWVGJy8lKXN0cmV0Y2h5R0ZCLyUqc3ltbWV0cmljR0ZCLyUobGFyZ2VvcEdGQi8lLm1vdmFibGVsaW1pdHNHRkIvJSdhY2NlbnRHRkIvJSdsc3BhY2VHUSYwLjBlbUYnLyUncnNwYWNlR1EsMC4zMzMzMzMzZW1GJy8lKWVxdWFsaXR5R0ZCLUYvNiRRIzM0RidGMkYy">NiQjIiNFIiIqIiNN</Equation></Text-field>
+</Output>
+<Output><Text-field style="Line Printed Output" layout="Line Printed Output">PASS: the displayed u,v lie in ker P
+PASS: q(lambda*u+mu*v)=9*A_N*|mu|^2+B_N*|2*lambda-mu|^2
+</Text-field>
+</Output>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L23" drawlabel="true">
+<Input><Text-field style="Heading1" opaque="false" subscript="false" underline="false" superscript="false" bold="false" foreground="[0,0,0]" italic="false" executable="false" selection-placeholder="false" size="12" readonly="false" background="[255,255,255]" strikethrough="false" placeholder="false" family="Times New Roman" font_style_name="Heading1" layout="Normal">1. Parameterize the INPUT fixed space, using the shared normalized basis.</Text-field>
+</Input>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L24" drawlabel="true">
+<Input><Text-field style="Maple Input" layout="Normal"># 1. Parameterize the INPUT fixed space, using the shared normalized basis.
+if not type(CR6,list) then error &quot;Run the kernel setup groups at the top of this worksheet first&quot; end if:
+if nops(CR6)&lt;&gt;71 then error &quot;Expected 71 crossing partitions from the setup&quot; end if:
+# R is the restriction of the preprint's T_r to ker M.
+# t=(b,c,a,b,c); no condition on the OUTPUT theta has been imposed.
+EmbedFixed := Matrix([[0,1,0],[0,0,1],[1,0,0],[0,1,0],[0,0,1]]):
+CheckMatrix(R . EmbedFixed-EmbedFixed,&quot;input parameterization is fixed by R&quot;):
+alpha := Vector(71):
+for ii to 71 do
+    alpha[ii] := expand(a*V[ii,3]+b*(V[ii,1]+V[ii,4])+c*(V[ii,2]+V[ii,5]));
+end do:
+
+
+
+</Text-field>
+</Input>
+<Output><Text-field style="Line Printed Output" layout="Line Printed Output">PASS: input parameterization is fixed by R
+</Text-field>
+</Output>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L25" drawlabel="true">
+<Input><Text-field style="Heading1" opaque="false" subscript="false" underline="false" superscript="false" bold="false" foreground="[0,0,0]" italic="false" executable="false" selection-placeholder="false" size="12" readonly="false" background="[255,255,255]" strikethrough="false" placeholder="false" family="Times New Roman" font_style_name="Heading1" layout="Normal">2. Partition composition for rotate-square-unrotate.</Text-field>
+</Input>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L26" drawlabel="true">
+<Input><Text-field style="Maple Input" layout="Normal"># 2. Partition composition for rotate-square-unrotate.
+# Temporary labels are 1..9. Put the first partition at [1,2,3,6,5,4]
+# and the second at [4,5,6,9,8,7]; read outputs [1,2,3,9,8,7].
+# Internal connected components not meeting an output contribute N.
+SquareGlue := proc(w::list,v::list)
+    local parent,slots,words,which,aa,bb,jj,out,roots;
+    parent := Array(1..9,[seq(jj,jj=1..9)]);
+    slots := [[1,2,3,6,5,4],[4,5,6,9,8,7]];
+    words := [w,v];
+    for which to 2 do for aa to 6 do for bb to aa-1 do
+        if words[which][aa]=words[which][bb] then
+            Join(parent,slots[which][aa],slots[which][bb]);
+        end if;
+    end do; end do; end do;
+    out := [seq(Root(parent,jj),jj in [1,2,3,9,8,7])];
+    roots := {seq(Root(parent,jj),jj=1..9)};
+    [Canon(out),nops(roots minus {op(out)})]
+end proc:
+
+
+
+</Text-field>
+</Input>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L27" drawlabel="true">
+<Input><Text-field style="Heading1" opaque="false" subscript="false" underline="false" superscript="false" bold="false" foreground="[0,0,0]" italic="false" executable="false" selection-placeholder="false" size="12" readonly="false" background="[255,255,255]" strikethrough="false" placeholder="false" family="Times New Roman" font_style_name="Heading1" layout="Normal">3. Compute every crossing coefficient. Sum over ORDERED pairs of partitions.</Text-field>
+</Input>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L28" drawlabel="true">
+<Input><Text-field style="Maple Input" layout="Normal"># 3. Compute every crossing coefficient. Sum over ORDERED pairs of partitions.
+# There are no complex conjugates in this operation: it squares A_xi.
+beta := Vector(71):
+for ii to 71 do for jj to 71 do
+    squareImage := SquareGlue(CR6[ii],CR6[jj]);
+    if not Crossing(squareImage[1]) then next end if;
+    outrow := 0;
+    for rr to 71 do
+        if CR6[rr]=squareImage[1] then outrow:=rr; break; end if;
+    end do;
+    if outrow=0 then error &quot;Crossing output not found&quot; end if;
+    beta[outrow] := beta[outrow]+N^squareImage[2]*alpha[ii]*alpha[jj];
+end do; end do:
+beta := map(expand,beta):
+<Font encoding="UTF-8">printf(&quot;Computed all 71 crossing coefficients of theta.\134n&quot;):
+</Font>
+
+
+</Text-field>
+</Input>
+<Output><Text-field style="Line Printed Output" layout="Line Printed Output">Computed all 71 crossing coefficients of theta.
+</Text-field>
+</Output>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L29" drawlabel="true">
+<Input><Text-field style="Heading1" opaque="false" subscript="false" underline="false" superscript="false" bold="false" foreground="[0,0,0]" italic="false" executable="false" selection-placeholder="false" size="12" readonly="false" background="[255,255,255]" strikethrough="false" placeholder="false" family="Times New Roman" font_style_name="Heading1" layout="Normal">4. Display the actual quadratic polynomials, including any zero rows.</Text-field>
+</Input>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L30" drawlabel="true">
+<Input><Text-field style="Maple Input" layout="Normal"># 4. Display the actual quadratic polynomials, including any zero rows.
+# This is also a 71 x 6 table in monomial order a^2,ab,ac,b^2,bc,c^2.
+CoeffABC := proc(f,powers::list)
+    coeff(coeff(coeff(expand(f),a,powers[1]),b,powers[2]),c,powers[3])
+end proc:
+Powers2 := [[2,0,0],[1,1,0],[1,0,1],[0,2,0],[0,1,1],[0,0,2]]:
+Mon2 := [a^2,a*b,a*c,b^2,b*c,c^2]:
+QuadTable := Matrix(71,6):
+<Font encoding="UTF-8">if SHOW_ALL_SQUARING_ROWS then printf(&quot;Rows below are [partition word, beta_p(a,b,c)].\134n&quot;) end if:
+</Font>for ii to 71 do
+    CheckZero(subs({a=tScale*a,b=tScale*b,c=tScale*c},beta[ii])-tScale^2*beta[ii],
+              cat(&quot;homogeneity of beta row &quot;,ii));
+    for jj to 6 do QuadTable[ii,jj] := factor(CoeffABC(beta[ii],Powers2[jj])) end do;
+    CheckZero(beta[ii]-add(QuadTable[ii,jj]*Mon2[jj],jj=1..6),
+              cat(&quot;six-monomial reconstruction, row &quot;,ii));
+    if SHOW_ALL_SQUARING_ROWS then print([CR6[ii],collect(beta[ii],[a,b,c],factor)]); end if;
+end do:
+<Font encoding="UTF-8">printf(&quot;PASS: all 71 polynomials are homogeneous quadratic (or zero).\134n&quot;):
+</Font>
+
+
+</Text-field>
+</Input>
+<Output><Text-field style="Line Printed Output" layout="Line Printed Output">PASS: all 71 polynomials are homogeneous quadratic (or zero).
+</Text-field>
+</Output>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L31" drawlabel="true">
+<Input><Text-field style="Heading1" opaque="false" subscript="false" underline="false" superscript="false" bold="false" foreground="[0,0,0]" italic="false" executable="false" selection-placeholder="false" size="12" readonly="false" background="[255,255,255]" strikethrough="false" placeholder="false" family="Times New Roman" font_style_name="Heading1" layout="Normal">5. The assumption theta in ker M forces M66 . beta = 0.</Text-field>
+</Input>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L32" drawlabel="true">
+<Input><Text-field style="Maple Input" layout="Normal"># 5. The assumption theta in ker M forces M66 . beta = 0.
+# We only need two particular NECESSARY rows, not a characterization of
+# every substituted row. Row 48 caps positions 3,4. Row 59 merges the
+# disjoint cyclic pairs {3,4} and {6,1}, in the shared map ordering.
+kernelOutput := map(expand,M66 . beta):
+kernelCap := factor(kernelOutput[48]):
+kernelDoubleMerge := factor(kernelOutput[59]):
+<Font encoding="UTF-8">printf(&quot;Two actual necessary kernel equations (each must vanish):\134n&quot;):
+</Font>print(kernelCap,kernelDoubleMerge);
+
+# For agreement with the earlier explanatory note, take invertible linear
+# combinations of these two equations. The denominator is nonzero on N&gt;=6.
+# deltaGH(6+s)=38+37s+11s^2+s^3 &gt;0 for s&gt;=0.
+deltaGH := N^3-7*N^2+13*N-4:
+CheckZero(expand(subs(N=6+s,deltaGH))-(38+37*s+11*s^2+s^3),
+          &quot;nonvanishing change of two kernel equations&quot;):
+gN := expand(normal(((3-N)*kernelCap+(N-2)*kernelDoubleMerge)/deltaGH)):
+hN := expand(normal((-(N^2-4*N+2)*kernelCap+N*kernelDoubleMerge)/deltaGH)):
+CheckZero(denom(normal(gN))-1,&quot;g_N is polynomial, with no remaining denominator&quot;):
+CheckZero(denom(normal(hN))-1,&quot;h_N is polynomial, with no remaining denominator&quot;):
+CheckZero(kernelCap-N*gN+(N-2)*hN,&quot;first direct row = N*g_N-(N-2)*h_N&quot;):
+CheckZero(kernelDoubleMerge-(N^2-4*N+2)*gN-(3-N)*hN,
+          &quot;second direct row = (N^2-4N+2)*g_N+(3-N)*h_N&quot;):
+
+
+
+</Text-field>
+</Input>
+<Output><Text-field style="Line Printed Output" layout="Line Printed Output">Two actual necessary kernel equations (each must vanish):
+</Text-field>
+</Output>
+<Output><Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUYjNlAtRiM2Ki1JI21uR0YkNiRRIjJGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRictSSNtb0dGJDYuUTEmSW52aXNpYmxlVGltZXM7RidGMy8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGPC8lKXN0cmV0Y2h5R0Y8LyUqc3ltbWV0cmljR0Y8LyUobGFyZ2VvcEdGPC8lLm1vdmFibGVsaW1pdHNHRjwvJSdhY2NlbnRHRjwvJSdsc3BhY2VHUSYwLjBlbUYnLyUncnNwYWNlR0ZLLyUpZXF1YWxpdHlHRjwtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJORicvJSdpdGFsaWNHUSV0cnVlRicvRjRRJ2l0YWxpY0YnLUYwNiRRIjRGJ0YzLyUxc3VwZXJzY3JpcHRzaGlmdEdRIjBGJ0Y2LUZUNiVRImFGJ0ZXRlpGNi1GVDYlUSJiRidGV0ZaRjMtRjc2LlEoJm1pbnVzO0YnRjNGOkY9Rj9GQUZDRkVGRy9GSlEsMC4yMjIyMjIyZW1GJy9GTUZmb0ZOLUYjNihGZm5GNkZQRjYtRlE2JUZfb0YvRmluRjNGYm8tRiM2Ki1GMDYkUSMxOEYnRjNGNi1GUTYlRlMtRjA2JFEiM0YnRjNGaW5GNkZcb0Y2Rl9vRjMtRjc2LlEnJnBsdXM7RidGM0Y6Rj1GP0ZBRkNGRUZHRmVvRmdvRk4tRiM2KC1GMDYkUSMzMkYnRjNGNkZhcEY2RmpvRjNGZnAtRiM2KkZmbkY2RmFwRjZGX29GNi1GVDYlUSJjRidGV0ZaRjNGYm8tRiM2KEYvRjYtRlE2JUZTRi9GaW5GNi1GUTYlRlxvRi9GaW5GM0ZmcC1GIzYqLUYwNiRRIzYwRidGM0Y2RmVxRjZGXG9GNkZfb0YzRmJvLUYjNipGL0Y2RmVxRjZGXG9GNkZgcUYzRmJvLUYjNigtRjA2JFEjODhGJ0YzRjZGZXFGNkZqb0YzRmJvLUYjNipGW3FGNkZlcUY2Rl9vRjZGYHFGM0ZmcC1GIzYoRi9GNkZlcUY2LUZRNiVGYHFGL0ZpbkYzRmZwLUYjNigtRjA2JFEjMTBGJ0YzRjZGU0Y2RmdxRjNGYm8tRiM2KkZickY2RlNGNkZcb0Y2Rl9vRjNGZnAtRiM2Ki1GMDYkUSI2RidGM0Y2RlNGNkZgcUY2RlxvRjNGZnAtRiM2KC1GMDYkUSM5NkYnRjNGNkZTRjZGam9GM0ZmcC1GIzYqRmJyRjZGU0Y2Rl9vRjZGYHFGM0Ziby1GIzYoRl5wRjZGU0Y2RmlyRjNGYm8tRiM2JkZdc0Y2RmdxRjNGZnAtRiM2KC1GMDYkUSM0OEYnRjNGNkZcb0Y2Rl9vRjNGZnAtRiM2KEZmbkY2RmBxRjZGXG9GM0Ziby1GIzYmRltxRjZGam9GM0Ziby1GIzYoLUYwNiRRIzgwRidGM0Y2Rl9vRjZGYHFGM0ZmcC1GIzYmLUYwNiRRIzM4RidGM0Y2RmlyRjNGMy1GNzYuUSgmY29tbWE7RidGM0Y6L0Y+RllGP0ZBRkNGRUZHRkkvRk1RLDAuMzMzMzMzM2VtRidGTi1GIzZWLUYjNiYtRlE2JUZTLUYwNiRRIjVGJ0YzRmluRjZGam9GM0Ziby1GIzYoLUYwNiRRIzExRidGM0Y2RlBGNkZqb0YzRmJvLUYjNipGZm5GNkZQRjZGX29GNkZgcUYzRmZwLUYjNiZGUEY2RmlyRjNGYm8tRiM2KkYvRjZGYXBGNkZcb0Y2Rl9vRjNGZnAtRiM2KC1GMDYkUSM0NUYnRjNGNkZhcEY2RmpvRjNGZnAtRiM2Ki1GMDYkUSM0NEYnRjNGNkZhcEY2Rl9vRjZGYHFGM0Ziby1GIzYoLUYwNiRRIzEzRidGM0Y2RmFwRjZGaXJGM0Ziby1GIzYmRmVxRjZGZ3FGM0ZmcC1GIzYqLUYwNiRRIzIwRidGM0Y2RmVxRjZGXG9GNkZfb0YzRmZwRl5yRmJvRmByRmJvLUYjNiotRjA2JFEkMTcyRidGM0Y2RmVxRjZGX29GNkZgcUYzRmZwLUYjNigtRjA2JFEjNjJGJ0YzRjZGZXFGNkZpckYzRmZwLUYjNigtRjA2JFEiN0YnRjNGNkZTRjZGZ3FGM0Ziby1GIzYqRltyRjZGU0Y2RlxvRjZGX29GM0Ziby1GIzYqLUYwNiRRIzEyRidGM0Y2RlNGNkZgcUY2RlxvRjNGZnAtRiM2KC1GMDYkUSM4NEYnRjNGNkZTRjZGam9GM0ZmcC1GIzYqLUYwNiRRJDI4NEYnRjNGNkZTRjZGX29GNkZgcUYzRmJvLUYjNigtRjA2JFEkMTI3RidGM0Y2RlNGNkZpckYzRmJvLUYjNiZGW3hGNkZncUYzRmZwLUYjNigtRjA2JFEjNTZGJ0YzRjZGXG9GNkZfb0YzRmZwLUYjNigtRjA2JFEjMTRGJ0YzRjZGYHFGNkZcb0YzRmJvRml0RmJvLUYjNigtRjA2JFEkMTY4RidGM0Y2Rl9vRjZGYHFGM0ZmcC1GIzYmLUYwNiRRIzkxRidGM0Y2RmlyRjNGM0Yz">NiQsUCooSSJORzYiIiIlSSJhR0YmIiIiSSJiR0YmRikiIiMqJkYlRidGKkYrISIlKihGJSIiJEYoRilGKkYpISM9KiZGJUYvRipGKyIjSyooRiVGL0YqRilJImNHRiZGKUYnKiZGJUYrRihGKyEiIyooRiVGK0YoRilGKkYpIiNnKihGJUYrRihGKUY0RilGNiomRiVGK0YqRishIykpKihGJUYrRipGKUY0RikhI0sqJkYlRitGNEYrRisqJkYlRilGKEYrIiM1KihGJUYpRihGKUYqRilGOyooRiVGKUYoRilGNEYpIiInKiZGJUYpRipGKyIjJyoqKEYlRilGKkYpRjRGKSIjKSkqJkYlRilGNEYrRjAqJEYoRishIzUqJkYoRilGKkYpIiNbKiZGKEYpRjRGKUYnKiRGKkYrRj0qJkYqRilGNEYpISMhKSokRjRGKyIjUSxWKiZGJSIiJkYqRitGKUYsISM2KihGJUYnRipGKUY0RilGLSomRiVGJ0Y0RitGKUYuRjZGMSIjWEYzIiNXKiZGJUYvRjRGKyEjOEY1ISIiRjciIz9GOUYrRjpGO0Y8ISRzIkY+IiNpRj8iIihGQSEjZ0ZCISM3RkQiIyUpRkYiJCVHRkghJEYiRklGZm5GSyIjY0ZNIiM5Rk5GPUZPISRvIkZRIiMiKg==</Equation></Text-field>
+</Output>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L33" drawlabel="true">
+<Input><Text-field style="Heading1" opaque="false" subscript="false" underline="false" superscript="false" bold="false" foreground="[0,0,0]" italic="false" executable="false" selection-placeholder="false" size="12" readonly="false" background="[255,255,255]" strikethrough="false" placeholder="false" family="Times New Roman" font_style_name="Heading1" layout="Normal">6. Under the ADDITIONAL assumption theta in Fix(R), the true kernel</Text-field>
+</Input>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L34" drawlabel="true">
+<Input><Text-field style="Maple Input" layout="Normal"># 6. Under the ADDITIONAL assumption theta in Fix(R), the true kernel
+# coordinates satisfy s1=s4 and s2=s5. The normalization says
+# beta[67]=(N-2)s1, beta[68]=s2, beta[69]=s3,
+# beta[70]=(N-2)s4, beta[71]=s5.
+# Thus beta[67]-beta[70]=0 is necessary. The other difference is automatic
+# for this square, as the following exact check shows.
+kN := expand(beta[67]-beta[70]):
+CheckZero(beta[68]-beta[71],&quot;the second fixed-coordinate condition is automatic&quot;):
+<Font encoding="UTF-8">printf(&quot;DERIVED necessary equations for theta in Fix(R):\134n&quot;):
+</Font>print('g_N'=collect(gN,[a,b,c],factor));
+print('h_N'=collect(hN,[a,b,c],factor));
+print('k_N'=collect(kN,[a,b,c],factor));
+
+# Only after deriving the equations, compare with the proposed formulas.
+gExpected := a^2-2*(N-2)^2*a*b+4*a*c+(N-2)^2*(N+2)*b^2
+             -4*(N-2)*(N-3)*b*c+(N^2-8*N+17)*c^2:
+hExpected := (2*N-5)*a^2-2*(N-2)*(N^2-4*N+6)*a*b+2*(N+1)*a*c
+             +(N-2)^2*(5*N-4)*b^2-4*(N-2)*(2*N-5)*b*c
+             +(N^2-8*N+19)*c^2:
+kExpected := 2*a^2-2*(N-2)*(N-4)*a*b-2*a*c
+             +(N-2)^2*(N^2-8*N+10)*b^2+4*(N-2)^2*b*c
+             -(N-4)*(2*N-5)*c^2:
+CheckZero(gN-gExpected,&quot;g_N matches the explanatory note&quot;):
+CheckZero(hN-hExpected,&quot;h_N matches the explanatory note&quot;):
+CheckZero(kN-kExpected,&quot;k_N matches the explanatory note&quot;):
+<Font encoding="UTF-8">printf(&quot;At N=6 the three derived forms are:\134n&quot;):
+</Font>print(subs(N=6,gN),subs(N=6,hN),subs(N=6,kN));
+<Font encoding="UTF-8">printf(&quot;SQUARING STAGE COMPLETE. No common-zero assertion has been assumed.\134n&quot;):
+</Font></Text-field>
+</Input>
+<Output><Text-field style="Line Printed Output" layout="Line Printed Output">DERIVED necessary equations for theta in Fix(R):
+</Text-field>
+</Output>
+<Output><Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUkjbWlHRiQ2JVEkZ19ORicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW9HRiQ2LlEpJmVxdWFscztGJy9GM1Enbm9ybWFsRicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRj0vJSlzdHJldGNoeUdGPS8lKnN5bW1ldHJpY0dGPS8lKGxhcmdlb3BHRj0vJS5tb3ZhYmxlbGltaXRzR0Y9LyUnYWNjZW50R0Y9LyUnbHNwYWNlR1EsMC4yNzc3Nzc4ZW1GJy8lJ3JzcGFjZUdGTC8lKWVxdWFsaXR5R0Y9LUYjNiwtSSVtc3VwR0YkNiUtRiw2JVEiYUYnRi9GMi1JI21uR0YkNiRRIjJGJ0Y5LyUxc3VwZXJzY3JpcHRzaGlmdEdRIjBGJy1GNjYuUScmcGx1cztGJ0Y5RjtGPkZARkJGREZGRkgvRktRLDAuMjIyMjIyMmVtRicvRk5GXm9GTy1GIzYmLUkobWZlbmNlZEdGJDYkLUYjNictRjY2LlEqJnVtaW51czA7RidGOUY7Rj5GQEZCRkRGRkZIRl1vRl9vRk8tRiM2KEZZLUY2Ni5RMSZJbnZpc2libGVUaW1lcztGJ0Y5RjtGPkZARkJGREZGRkgvRktRJjAuMGVtRicvRk5GYHBGTy1GVDYlLUZjbzYkLUYjNiYtRiw2JVEiTkYnRi9GMi1GNjYuUSgmbWludXM7RidGOUY7Rj5GQEZCRkRGRkZIRl1vRl9vRk9GWUY5RjlGWUZnbkZccC1GLDYlUSJiRidGL0YyRjlGam4tRiM2Ji1GWjYkUSI0RidGOUZccC1GLDYlUSJjRidGL0YyRjlGOUY5RlxwRlZGOUZqbi1GIzYoLUZjbzYkLUYjNiZGaHBGam5GWUY5RjlGXHBGYnBGXHAtRlQ2JUZecUZZRmduRjlGW3EtRiM2LEZjcUZccEZkcEZccC1GY282JC1GIzYnRmdvLUZaNiRRIjNGJ0Y5RmpuRmhwRjlGOUZccEZmcUZccEZecUY5RmpuLUYjNiYtRmNvNiQtRiM2KC1GVDYlRmhwRllGZ25GW3EtRiM2Ji1GWjYkUSI4RidGOUZccEZocEY5RmpuLUZaNiRRIzE3RidGOUY5RjlGXHAtRlQ2JUZmcUZZRmduRjlGOUY5">L0kkZ19ORzYiLCwqJEkiYUdGJCIiIyIiIiomLCYqJiwmSSJOR0YkRikhIiNGKUYoSSJiR0YkRilGL0kiY0dGJCIiJUYpRidGKUYpKigsJkYuRilGKEYpRilGLUYoRjBGKEYpKipGLUYpLCYhIiRGKUYuRilGKUYxRilGMEYpISIlKiYsKCokRi5GKEYpRi4hIikiIzxGKUYpRjFGKEYp</Equation></Text-field>
+</Output>
+<Output><Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUkjbWlHRiQ2JVEkaF9ORicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW9HRiQ2LlEpJmVxdWFscztGJy9GM1Enbm9ybWFsRicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRj0vJSlzdHJldGNoeUdGPS8lKnN5bW1ldHJpY0dGPS8lKGxhcmdlb3BHRj0vJS5tb3ZhYmxlbGltaXRzR0Y9LyUnYWNjZW50R0Y9LyUnbHNwYWNlR1EsMC4yNzc3Nzc4ZW1GJy8lJ3JzcGFjZUdGTC8lKWVxdWFsaXR5R0Y9LUYjNiwtRiM2Ji1JKG1mZW5jZWRHRiQ2JC1GIzYmLUYjNiYtSSNtbkdGJDYkUSIyRidGOS1GNjYuUTEmSW52aXNpYmxlVGltZXM7RidGOUY7Rj5GQEZCRkRGRkZIL0ZLUSYwLjBlbUYnL0ZORl5vRk8tRiw2JVEiTkYnRi9GMkY5LUY2Ni5RKCZtaW51cztGJ0Y5RjtGPkZARkJGREZGRkgvRktRLDAuMjIyMjIyMmVtRicvRk5GZ29GTy1GZ242JFEiNUYnRjlGOUY5RmpuLUklbXN1cEdGJDYlLUYsNiVRImFGJ0YvRjJGZm4vJTFzdXBlcnNjcmlwdHNoaWZ0R1EiMEYnRjktRjY2LlEnJnBsdXM7RidGOUY7Rj5GQEZCRkRGRkZIRmZvRmhvRk8tRiM2Ji1GVjYkLUYjNictRjY2LlEqJnVtaW51czA7RidGOUY7Rj5GQEZCRkRGRkZIRmZvRmhvRk8tRiM2KkZmbkZqbi1GVjYkLUYjNiZGYG9GY29GZm5GOUY5RmpuLUZWNiQtRiM2KC1GXXA2JUZgb0ZmbkZicEZjby1GIzYmLUZnbjYkUSI0RidGOUZqbkZgb0Y5RmVwLUZnbjYkUSI2RidGOUY5RjlGam4tRiw2JVEiYkYnRi9GMkY5RmVwLUYjNiYtRlY2JC1GIzYmRlpGZXBGZm5GOUY5RmpuLUYsNiVRImNGJ0YvRjJGOUY5RjlGam5GX3BGOUZlcC1GIzYoLUZWNiQtRiM2Ji1GIzYmRmlvRmpuRmBvRjlGY29GX3JGOUY5RmpuLUZdcDYlRmNxRmZuRmJwRmpuLUZdcDYlRmVyRmZuRmJwRjlGY28tRiM2LEZfckZqbkZjcUZqbkZVRmpuRl5zRmpuRmVyRjlGZXAtRiM2Ji1GVjYkLUYjNihGW3JGY28tRiM2Ji1GZ242JFEiOEYnRjlGam5GYG9GOUZlcC1GZ242JFEjMTlGJ0Y5RjlGOUZqbi1GXXA2JUZec0ZmbkZicEY5RjlGOQ==">L0kkaF9ORzYiLCwqJiwmSSJOR0YkIiIjISImIiIiRitJImFHRiRGKUYrKiYsJiooLCZGKEYrISIjRitGKywoKiRGKEYpRitGKCEiJSIiJ0YrRitJImJHRiRGK0YxKiYsJkYoRilGKUYrRitJImNHRiRGK0YrRitGLEYrRisqKCwmRigiIiZGNEYrRitGMEYpRjZGKUYrKipGMEYrRidGK0Y5RitGNkYrRjQqJiwoRjNGK0YoISIpIiM+RitGK0Y5RilGKw==</Equation></Text-field>
+</Output>
+<Output><Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUkjbWlHRiQ2JVEka19ORicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW9HRiQ2LlEpJmVxdWFscztGJy9GM1Enbm9ybWFsRicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRj0vJSlzdHJldGNoeUdGPS8lKnN5bW1ldHJpY0dGPS8lKGxhcmdlb3BHRj0vJS5tb3ZhYmxlbGltaXRzR0Y9LyUnYWNjZW50R0Y9LyUnbHNwYWNlR1EsMC4yNzc3Nzc4ZW1GJy8lJ3JzcGFjZUdGTC8lKWVxdWFsaXR5R0Y9LUYjNiwtRiM2Ji1JI21uR0YkNiRRIjJGJ0Y5LUY2Ni5RMSZJbnZpc2libGVUaW1lcztGJ0Y5RjtGPkZARkJGREZGRkgvRktRJjAuMGVtRicvRk5GZ25GTy1JJW1zdXBHRiQ2JS1GLDYlUSJhRidGL0YyRlUvJTFzdXBlcnNjcmlwdHNoaWZ0R1EiMEYnRjktRjY2LlEnJnBsdXM7RidGOUY7Rj5GQEZCRkRGRkZIL0ZLUSwwLjIyMjIyMjJlbUYnL0ZORmZvRk8tRiM2Ji1JKG1mZW5jZWRHRiQ2JC1GIzYnLUY2Ni5RKiZ1bWludXMwO0YnRjlGO0Y+RkBGQkZERkZGSEZlb0Znb0ZPLUYjNipGVUZZLUZbcDYkLUYjNiYtRiw2JVEiTkYnRi9GMi1GNjYuUSgmbWludXM7RidGOUY7Rj5GQEZCRkRGRkZIRmVvRmdvRk9GVUY5RjlGWS1GW3A2JC1GIzYmRmhwRltxLUZWNiRRIjRGJ0Y5RjlGOUZZLUYsNiVRImJGJ0YvRjJGOUZbcS1GIzYmRlVGWS1GLDYlUSJjRidGL0YyRjlGOUY5RllGXG9GOUZiby1GIzYoLUZbcDYkLUYjNigtRmpuNiVGaHBGVUZfb0ZbcS1GIzYmLUZWNiRRIjhGJ0Y5RllGaHBGOUZiby1GVjYkUSMxMEYnRjlGOUY5RlktRmpuNiVGZHBGVUZfb0ZZLUZqbjYlRmVxRlVGX29GOUZiby1GIzYqRmJxRllGXXNGWUZlcUZZRmpxRjlGW3EtRiM2KC1GW3A2JC1GIzYmLUYjNiZGVUZZRmhwRjlGW3EtRlY2JFEiNUYnRjlGOUY5RllGXnFGWS1Gam42JUZqcUZVRl9vRjlGOUY5">L0kka19ORzYiLCwqJEkiYUdGJCIiI0YoKiYsJiooLCZJIk5HRiQiIiIhIiNGLkYuLCZGLUYuISIlRi5GLkkiYkdGJEYuRi9JImNHRiRGL0YuRidGLkYuKigsKCokRi1GKEYuRi0hIikiIzVGLkYuRixGKEYyRihGLiooRixGKEYyRi5GM0YuIiIlKigsJkYtRighIiZGLkYuRjBGLkYzRighIiI=</Equation></Text-field>
+</Output>
+<Output><Text-field style="Line Printed Output" layout="Line Printed Output">At N=6 the three derived forms are:
+</Text-field>
+</Output>
+<Output><Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYoLUYjNi4tSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJhRicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiMkYnL0Y4USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRictSSNtb0dGJDYuUSgmbWludXM7RidGPi8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGSS8lKXN0cmV0Y2h5R0ZJLyUqc3ltbWV0cmljR0ZJLyUobGFyZ2VvcEdGSS8lLm1vdmFibGVsaW1pdHNHRkkvJSdhY2NlbnRHRkkvJSdsc3BhY2VHUSwwLjIyMjIyMjJlbUYnLyUncnNwYWNlR0ZYLyUpZXF1YWxpdHlHRkktRiM2KC1GOzYkUSMzMkYnRj4tRkQ2LlExJkludmlzaWJsZVRpbWVzO0YnRj5GR0ZKRkxGTkZQRlJGVC9GV1EmMC4wZW1GJy9GWkZgb0ZlbkYwRlxvLUYxNiVRImJGJ0Y0RjdGPi1GRDYuUScmcGx1cztGJ0Y+RkdGSkZMRk5GUEZSRlRGVkZZRmVuLUYjNigtRjs2JFEiNEYnRj5GXG8tRjE2JVEiY0YnRjRGN0Zcb0YwRj5GZW8tRiM2Ji1GOzYkUSQxMjhGJ0Y+RlxvLUYuNiVGYm9GOkZARj5GQy1GIzYoLUY7NiRRIzQ4RidGPkZcb0Zib0Zcb0ZdcEY+RmVvLUYjNiYtRjs2JFEiNUYnRj5GXG8tRi42JUZdcEY6RkBGPkY+LUZENi5RKCZjb21tYTtGJ0Y+RkcvRktGNkZMRk5GUEZSRlRGX28vRlpRLDAuMzMzMzMzM2VtRidGZW4tRiM2Li1GIzYmLUY7NiRRIjdGJ0Y+RlxvRi1GPkZDLUYjNigtRjs2JFEkMTQ0RidGPkZcb0YwRlxvRmJvRj5GZW8tRiM2KC1GOzYkUSMxNEYnRj5GXG9GXXBGXG9GMEY+RmVvLUYjNiYtRjs2JFEkNDE2RidGPkZcb0ZlcEY+RkMtRiM2KC1GOzYkUSQxMTJGJ0Y+RlxvRmJvRlxvRl1wRj5GZW8tRiM2JkZdckZcb0ZhcUY+Rj5GY3EtRiM2Li1GIzYmRjpGXG9GLUY+RkMtRiM2KC1GOzYkUSMxNkYnRj5GXG9GMEZcb0Zib0Y+RkMtRiM2KEY6RlxvRl1wRlxvRjBGPkZDLUYjNiZGaW5GXG9GZXBGPkZlby1GIzYoLUY7NiRRIzY0RidGPkZcb0Zib0Zcb0ZdcEY+RkMtRiM2JkZnckZcb0ZhcUY+Rj5GPg==">NiUsLiokSSJhRzYiIiIjIiIiKiZGJUYoSSJiR0YmRighI0sqJkYlRihJImNHRiZGKCIiJSokRipGJyIkRyIqJkYqRihGLUYoISNbKiRGLUYnIiImLC5GJCIiKEYpISRXIkYsIiM5Ri8iJDslRjEhJDciRjNGNiwuRiRGJ0YpISM7RiwhIiNGL0YrRjEiI2tGMyEjOQ==</Equation></Text-field>
+</Output>
+<Output><Text-field style="Line Printed Output" layout="Line Printed Output">SQUARING STAGE COMPLETE. No common-zero assertion has been assumed.
+</Text-field>
+</Output>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L35" drawlabel="true">
+<Input><Text-field style="Heading1" opaque="false" subscript="false" underline="false" superscript="false" bold="false" foreground="[0,0,0]" italic="false" executable="false" selection-placeholder="false" size="12" readonly="false" background="[255,255,255]" strikethrough="false" placeholder="false" family="Times New Roman" font_style_name="Heading1" layout="Normal">7. Direct comparison with the manuscript's final two-case algebra.</Text-field>
+</Input>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L36" drawlabel="true">
+<Input><Text-field style="Maple Input" layout="Normal"># 7. Direct comparison with the manuscript's final two-case algebra.
+# These checks start from g_N, h_N, k_N derived above by partition gluing;
+# the expected identities are then tested as exact polynomials.
+CheckZero(hN+kN-(N-1)*gN-(N-2)*
+          (a-2*(N-2)*b+(N-4)*c)*(a+2*(N-2)*b-(N-2)*c),
+          &quot;equation (28), product of two linear factors&quot;):
+
+# Case 1 in equation (29): a=2(N-2)b-(N-4)c.
+aCase1 := 2*(N-2)*b-(N-4)*c:
+g1 := expand(subs(a=aCase1,gN)):
+k1 := expand(subs(a=aCase1,kN)):
+g1Expected := (14-3*N)*(N-2)^2*b^2+2*(N^2-10*N+26)*(N-2)*b*c
+              +(2*N^2-20*N+49)*c^2:
+g1MinusK1Expected := (N-5)*((2*N-9)*c^2-(N-4)*(N-2)^2*b^2):
+CheckZero(g1-g1Expected,&quot;equation (29), first expression&quot;):
+CheckZero(g1-k1-g1MinusK1Expected,&quot;equation (29), second expression&quot;):
+
+# Eliminate b^2 using g1-k1=0, obtaining the paper's linear relation in b,c.
+Dpoly := N^2-10*N+26:
+Bpoly := (N-4)*(N-5)*(N-8)-1:
+# Here (N-5)&lt;&gt;0 in the region N&gt;=6.
+CheckZero((N-5)*(N-4)*g1-(3*N-14)*(g1-k1)
+          -(N-5)*2*c*((N-4)*(N-2)*Dpoly*b+Bpoly*c),
+          &quot;Case 1 elimination following equation (30)&quot;):
+# Equation (31) follows algebraically under the two assumed equations
+# and c&lt;&gt;0; its divisibility contradiction is proved in the manuscript.
+
+# Case 2 in equation (32): v=(N-2)b-c and a=-2(N-2)b+(N-2)c.
+# Thus b=(v+c)/(N-2) and a=-2v+(N-4)c.
+Epoly := N^2-4*N+2:
+g2 := expand(normal(subs({a=-2*v+(N-4)*c,b=(v+c)/(N-2)},gN))):
+k2 := expand(normal(subs({a=-2*v+(N-4)*c,b=(v+c)/(N-2)},kN))):
+g2Expected := (5*N-2)*v^2-2*N*(N-5)*v*c-3*(N-5)*c^2:
+k2Expected := Epoly*v^2-(N-5)*(N-2)*c^2:
+CheckZero(g2-g2Expected,&quot;equation (32), g&quot;):
+CheckZero(k2-k2Expected,&quot;equation (32), k&quot;):
+CheckZero(Epoly*g2-(5*N-2)*k2
+          -2*(N-5)*c*((N^2-1)*c-N*Epoly*v),
+          &quot;equation (33), eliminate v^2&quot;):
+# Equation (34) is the consequent equality under g2=k2=0,c&lt;&gt;0.
+# Its modular contradiction is a mathematical argument in the paper.
+<Font encoding="UTF-8">printf(&quot;PASS: manuscript equations (28)-(33) verified symbolically.\134n&quot;):
+printf(&quot;Moment-six source reached the final statement without a Maple error.\134n&quot;):
+</Font></Text-field>
+</Input>
+<Output><Text-field style="Line Printed Output" layout="Line Printed Output">PASS: manuscript equations (28)-(33) verified symbolically.
+Moment-six source reached the final statement without a Maple error.
+</Text-field>
+</Output>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L37" drawlabel="true">
+<Input><Text-field style="Heading1" opaque="false" subscript="false" underline="false" superscript="false" bold="false" foreground="[0,0,0]" italic="false" executable="false" selection-placeholder="false" size="12" readonly="false" background="[255,255,255]" strikethrough="false" placeholder="false" family="Times New Roman" font_style_name="Heading1" layout="Normal">8. Compare another polynomial basis AFTER executing this file.</Text-field>
+</Input>
+</Group>
+<Group view="presentation" hide-input="false" hide-output="false" inline-output="false" labelreference="L38" drawlabel="true">
+<Input><Text-field style="Maple Input" layout="Normal"># 8. Compare another polynomial basis AFTER executing this file.
+# Wpaper must have the SAME partition-row order and five columns.
+# Do NOT assume Maple NullSpace chooses the same normalized basis.
+# This procedure derives Wpaper=V S, checks ALL 71 rows and full column rank.
+# Use: S := CompareBasis(Wpaper);
+# Its coordinates satisfy t_explainer = S . t_paper.
+CompareBasis := proc(Wpaper)
+    local S,deltaS;
+    if LinearAlgebra:-RowDimension(Wpaper)&lt;&gt;71 or
+       LinearAlgebra:-ColumnDimension(Wpaper)&lt;&gt;5 then
+        error &quot;Expected a 71 x 5 matrix in CR6 row order&quot;;
+    end if;
+    S := map(normal,LinearAlgebra:-MatrixInverse(D0) . Wpaper[67..71,1..5]);
+    CheckMatrix(Wpaper-V . S,&quot;Wpaper = V S, all rows checked&quot;);
+    deltaS := factor(LinearAlgebra:-Determinant(S));
+    if deltaS=0 then error &quot;Wpaper is not generically a basis&quot; end if;
+<Font encoding="UTF-8">    printf(&quot;Basis-change determinant; check exceptional parameter values:\134n&quot;);
+</Font>    print(deltaS);
+    S
+end proc:
+
+<Font encoding="UTF-8">printf(&quot;Quadratic-form computation finished.\134n&quot;):
+printf(&quot;Keep the Maple version and outputs with the reproducibility files.\134n&quot;):
+</Font># Computational checks do not replace the categorical argument or the
+# divisibility arguments in the manuscript. All Maple code must be executed
+# in the author's Maple installation before public release.
+</Text-field>
+</Input>
+<Output><Text-field style="Line Printed Output" layout="Line Printed Output">Quadratic-form computation finished.
+Keep the Maple version and outputs with the reproducibility files.
+</Text-field>
+</Output>
+</Group>
+<Group labelreference="L39" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Equation executable="true" style="2D Input" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbW9HRiQ2LlEifkYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGNC8lKXN0cmV0Y2h5R0Y0LyUqc3ltbWV0cmljR0Y0LyUobGFyZ2VvcEdGNC8lLm1vdmFibGVsaW1pdHNHRjQvJSdhY2NlbnRHRjQvJSdsc3BhY2VHUSYwLjBlbUYnLyUncnNwYWNlR0ZDLyUpZXF1YWxpdHlHRjQvJStleGVjdXRhYmxlR0Y0Ri8=">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbW9HRiQ2LlEifkYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGNC8lKXN0cmV0Y2h5R0Y0LyUqc3ltbWV0cmljR0Y0LyUobGFyZ2VvcEdGNC8lLm1vdmFibGVsaW1pdHNHRjQvJSdhY2NlbnRHRjQvJSdsc3BhY2VHUSYwLjBlbUYnLyUncnNwYWNlR0ZDLyUpZXF1YWxpdHlHRjQvJStleGVjdXRhYmxlR0Y0Ri8=</Equation></Text-field>
+</Input>
+</Group>
+</Worksheet>

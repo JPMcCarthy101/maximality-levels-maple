@@ -1,0 +1,238 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Worksheet>
+  <Version major="2025" minor="2"/>
+  <Label-Scheme value="2" prefix=""/>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Title" layout="Normal" xml:space="preserve">Moment level five: paper equations (13)-(14)</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Text" layout="Normal" xml:space="preserve">Self-contained symbolic source; run all Maple input groups in order from a clean worksheet. Your Maple execution is still required.</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Maple Input" layout="Normal" xml:space="preserve"># Moment level five, self-contained symbolic computation.
+# The paper's five singleton deletions, four adjacent merges, and wrap merge.
+# These reconstructed routines match the original 10 x 10 mathematical setup.
+# This source has NOT been run in Maple in the present environment.
+restart:
+printf("Moment five; Maple version: %a\n",kernelopts(version)):
+
+</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Heading1" layout="Normal" xml:space="preserve">1. Partition utilities and exact checks.</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Maple Input" layout="Normal" xml:space="preserve"># 1. Partition utilities and exact checks.
+CheckZero := proc(expr, label::string)
+    if normal(expand(expr)) &lt;&gt; 0 then error "FAILED: %1", label end if;
+    NULL
+end proc:
+CheckMatrix := proc(A, label::string)
+    local ii,jj;
+    for ii to LinearAlgebra:-RowDimension(A) do
+        for jj to LinearAlgebra:-ColumnDimension(A) do
+            CheckZero(A[ii,jj],cat(label," [",ii,",",jj,"]"));
+        end do;
+    end do;
+    printf("PASS: %s\n",label);
+    NULL
+end proc:
+Canon := proc(w::list)
+    local seen,nextid,xx,out;
+    seen := table(); nextid := 0; out := [];
+    for xx in w do
+        if not assigned(seen[xx]) then
+            seen[xx] := nextid; nextid := nextid+1;
+        end if;
+        out := [op(out),seen[xx]];
+    end do;
+    out
+end proc:
+Words := proc(nn::nonnegint)
+    local ws,newws,stage,w,mm,jj;
+    ws := [[]];
+    for stage to nn do
+        newws := [];
+        for w in ws do
+            if nops(w)=0 then mm := -1 else mm := max(op(w)) end if;
+            for jj from 0 to mm+1 do newws := [op(newws),[op(w),jj]] end do;
+        end do;
+        ws := newws;
+    end do;
+    ws
+end proc:
+Crossing := proc(w::list)
+    local aa,bb,cc,dd,nn;
+    nn := nops(w);
+    for aa to nn-3 do for bb from aa+1 to nn-2 do
+        for cc from bb+1 to nn-1 do for dd from cc+1 to nn do
+            if w[aa]=w[cc] and w[bb]=w[dd] and w[aa]&lt;&gt;w[bb] then
+                return true;
+            end if;
+        end do; end do;
+    end do; end do;
+    false
+end proc:
+Root := proc(parent,xx::posint)
+    local rr; rr := xx;
+    while parent[rr]&lt;&gt;rr do rr := parent[rr] end do;
+    rr
+end proc:
+Join := proc(parent,xx::posint,yy::posint)
+    parent[Root(parent,xx)] := Root(parent,yy);
+    NULL
+end proc:
+Lower := proc(w::list,groups::list,caps::list)
+    local parent,nn,g,jj,out,roots;
+    nn := max(op(w))+1;
+    parent := Array(1..nn,[seq(jj,jj=1..nn)]);
+    for g in [op(groups),op(caps)] do
+        for jj from 2 to nops(g) do
+            Join(parent,w[g[1]]+1,w[g[jj]]+1);
+        end do;
+    end do;
+    out := [seq(Root(parent,w[g[1]]+1),g in groups)];
+    roots := {seq(Root(parent,jj),jj=1..nn)};
+    [Canon(out),nops(roots minus {op(out)})]
+end proc:
+
+
+</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Heading1" layout="Normal" xml:space="preserve">2. Enumerate the ten crossing partitions and construct ten operations.</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Maple Input" layout="Normal" xml:space="preserve"># 2. Enumerate the ten crossing partitions and construct ten operations.
+CR5 := select(Crossing,Words(5)):
+if nops(CR5)&lt;&gt;10 then error "Expected ten crossing partitions" end if:
+F5 := []:
+# Five singleton deletions: keep the other four, in their natural order.
+for xx to 5 do
+    groups := [seq([jj],jj=1..5)]:
+    groups := select(g -&gt; g[1]&lt;&gt;xx,groups):
+    F5 := [op(F5),[groups,[],"singleton"]]:
+end do:
+# Four adjacent pair merges.
+for xx to 4 do
+    groups := [[xx,xx+1]]:
+    for jj to 5 do if jj&lt;&gt;xx and jj&lt;&gt;xx+1 then
+        groups := [op(groups),[jj]]:
+    end if; end do:
+    groups := sort(groups,(g,h)-&gt;g[1]&lt;h[1]):
+    F5 := [op(F5),[groups,[],"adjacent-merge"]]:
+end do:
+# Tenth operation is the cyclic pair merge {5,1}.
+F5 := [op(F5),[[[1,5],[2],[3],[4]],[],"wrap-merge"]]:
+if nops(F5)&lt;&gt;10 then error "Expected ten operations" end if:
+M5 := Matrix(10,10):
+for ii to 10 do for jj to 10 do
+    image := Lower(CR5[jj],F5[ii][1],F5[ii][2]):
+    if image[1]=[0,1,0,1] then M5[ii,jj]:=N^image[2] end if:
+end do; end do:
+printf("PASS: constructed 10 x 10 matrix, equation (13).\n"):
+
+</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Heading1" layout="Normal" xml:space="preserve">3. Check the symbolic determinant formula, equation (14).</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Maple Input" layout="Normal" xml:space="preserve"># 3. Check the symbolic determinant formula, equation (14).
+detM5 := factor(LinearAlgebra:-Determinant(M5)):
+ExpectedDet5 := (N-4)*(N^2-3*N+1)^2:
+if not evalb(normal(detM5/ExpectedDet5)=1 or normal(detM5/ExpectedDet5)=-1) then
+    error "Moment-five determinant differs from equation (14)":
+end if:
+printf("PASS equation (14); determinant = %a\n",detM5):
+
+</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Heading1" layout="Normal" xml:space="preserve">4. At N=4 compute rank and the specified kernel generator.</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Maple Input" layout="Normal" xml:space="preserve"># 4. At N=4 compute rank and the specified kernel generator.
+m4 := map(x-&gt;subs(N=4,x),M5):
+if LinearAlgebra:-Rank(m4)&lt;&gt;9 then error "Expected rank 9 at N=4" end if:
+Eta := Vector(10):
+for ii to 10 do
+    nb := nops({op(CR5[ii])}):
+    if nb=3 then Eta[ii]:=1 elif nb=2 then Eta[ii]:=-2
+    else error "Unexpected crossing partition block count" end if:
+end do:
+CheckMatrix(m4 . Matrix(10,1,(row,col)-&gt;Eta[row]),
+            "moment-five N=4 kernel generator"):
+printf("PASS Proposition 7.3: rank 9 and proposed eta in kernel.\n"):
+
+</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Heading1" layout="Normal" xml:space="preserve">5. Direct verify the discrete partition identity for N=4.</Text-field>
+    </Input>
+  </Group>
+  <Group view="presentation" hide-input="false" hide-output="false" inline-output="false" drawlabel="true">
+    <Input>
+      <Text-field alignment="left" style="Maple Input" layout="Normal" xml:space="preserve"># 5. Direct verify the discrete partition identity for N=4.
+# For all 4^5 index-tuples, partition vector of the five singletons equals
+# sum_{p != discrete} mu(p) xi_p, where mu(p)=(-1)^|p| prod (|B|-1)!.
+# This is a finite exact check, not a check at a floating-point approximation.
+Part5 := Words(5):
+Discrete := [0,1,2,3,4]:
+MobiusCoeff := proc(w::list)
+    local count,uu,label,dd,blockCount;
+    count := nops({op(w)});
+    dd := (-1)^count;
+    for label from 0 to count-1 do
+        blockCount := nops(select(uu -&gt; uu=label,w));
+        dd := dd*factorial(blockCount-1);
+    end do;
+    dd
+end proc:
+PartitionValue := proc(w::list,inds::list)
+    local x,y;
+    for x to 4 do for y from x+1 to 5 do
+        if w[x]=w[y] and inds[x]&lt;&gt;inds[y] then return 0 end if;
+    end do; end do;
+    1
+end proc:
+for i1 to 4 do for i2 to 4 do for i3 to 4 do
+for i4 to 4 do for i5 to 4 do
+    inds := [i1,i2,i3,i4,i5]:
+    total := 0:
+    for pp in Part5 do
+        if pp&lt;&gt;Discrete then
+            total := total+MobiusCoeff(pp)*PartitionValue(pp,inds):
+        end if:
+    end do:
+    if total&lt;&gt;1 then error "Discrete identity fails for index tuple %1",inds end if:
+end do; end do; end do; end do; end do:
+printf("PASS Proposition 7.3: all 4^5 entries of the discrete identity.\n"):
+printf("Moment-five source reached its final statement without a Maple error.\n"):
+</Text-field>
+    </Input>
+  </Group>
+</Worksheet>

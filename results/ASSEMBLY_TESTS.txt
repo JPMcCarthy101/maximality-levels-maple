@@ -1,0 +1,9 @@
+PASS independent: moment five determinant, rank 9, eta, 4^5 discrete-vector identity
+PASS independent: M(4) rank 54
+PASS independent: M(6)V(6)=0, symmetries, determinant mod 10007
+PASS independent: contraction and A(6)=26/9, B(6)=34
+PASS independent: squaring and g,h,k at N=6 on six quadratic test inputs
+PASS independent: M(7)V(7)=0, symmetries, determinant mod 10007
+PASS independent: contraction and A(7)=43/6, B(7)=159/2
+PASS independent: squaring and g,h,k at N=7 on six quadratic test inputs
+All finite-N independent spot checks passed. These do not prove a uniform symbolic claim.
